@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function ProblemSolution() {
   return (
-    <section className="py-16 md:py-24 px-6">
+    <section className="py-16 md:py-24 px-6 bg-white/40">
       <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         {/* Copy */}
         <motion.div
@@ -47,8 +47,8 @@ export default function ProblemSolution() {
         >
           <div className="relative rounded-2xl overflow-hidden shadow-[0_16px_64px_rgba(43,43,43,0.08)]">
             <img
-              src="/flat-lay.png"
-              alt="Deep Skin scar tape flat lay with scissors and eucalyptus"
+              src="/scar.png"
+              alt="Scar on skin"
               className="w-full max-w-[480px] object-cover"
             />
           </div>

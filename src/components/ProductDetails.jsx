@@ -24,8 +24,8 @@ export default function ProductDetails() {
         >
           <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(43,43,43,0.06)]">
             <img
-              src="/unboxing.png"
-              alt="Unboxing Deep Skin scar tape"
+              src="/flat-lay.png"
+              alt="Deep Skin scar tape flat lay"
               className="w-full max-w-[440px]"
             />
           </div>

@@ -7,6 +7,7 @@ import HowItWorks from './components/HowItWorks'
 import Benefits from './components/Benefits'
 import ProductDetails from './components/ProductDetails'
 import BeforeAfter from './components/BeforeAfter'
+import MidCTA from './components/MidCTA'
 import Reviews from './components/Reviews'
 import FAQ from './components/FAQ'
 import FinalCTA from './components/FinalCTA'
@@ -24,6 +25,7 @@ export default function App() {
       <Benefits />
       <ProductDetails />
       <BeforeAfter />
+      <MidCTA />
       <Reviews />
       <FAQ />
       <FinalCTA />
