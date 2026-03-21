@@ -51,18 +51,18 @@ export default function Hero() {
             alt="Deep Skin scar tape product and application"
             className="w-full h-full object-cover object-center"
           />
-          {/* Mobile gradient - lighter at top to show product, stronger at bottom for text */}
+          {/* Mobile gradient - subtle, just enough for bottom fade */}
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to bottom, rgba(250,247,244,0.3) 0%, rgba(250,247,244,0.15) 25%, rgba(250,247,244,0.35) 50%, rgba(250,247,244,0.75) 65%, rgba(237,230,221,0.95) 80%, #EDE6DD 100%)',
+              background: 'linear-gradient(to bottom, transparent 0%, transparent 60%, rgba(237,230,221,0.6) 85%, #EDE6DD 100%)',
             }}
           />
         </div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full px-5 md:px-6 flex items-end md:items-center min-h-[100svh] pb-24 md:pb-0">
+      <div className="relative z-10 max-w-6xl mx-auto w-full px-5 md:px-6 flex items-center min-h-[100svh] pt-16 md:pt-0">
         <motion.div
           style={{ opacity }}
           className="w-full"
@@ -71,7 +71,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-            className="text-center lg:text-left max-w-xl"
+            className="text-center lg:text-left max-w-xl md:bg-transparent md:backdrop-blur-none md:rounded-none md:p-0 bg-cream/70 backdrop-blur-md rounded-3xl p-6"
           >
             <h1 className="font-serif text-[2.1rem] sm:text-[2.6rem] md:text-[3.4rem] lg:text-[3.8rem] leading-[1.08] font-semibold text-near-black tracking-[-0.01em]">
               Your skin tells
