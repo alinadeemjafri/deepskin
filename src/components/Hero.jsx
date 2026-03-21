@@ -51,18 +51,18 @@ export default function Hero() {
             alt="Deep Skin scar tape product and application"
             className="w-full h-full object-cover object-center"
           />
-          {/* Mobile gradient - transparent at top, fades to cream at bottom for text readability */}
+          {/* Mobile gradient - lighter at top to show product, stronger at bottom for text */}
           <div
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to bottom, transparent 0%, transparent 45%, rgba(245,240,235,0.5) 60%, rgba(245,240,235,0.85) 75%, #EDE6DD 100%)',
+              background: 'linear-gradient(to bottom, rgba(250,247,244,0.3) 0%, rgba(250,247,244,0.15) 25%, rgba(250,247,244,0.35) 50%, rgba(250,247,244,0.75) 65%, rgba(237,230,221,0.95) 80%, #EDE6DD 100%)',
             }}
           />
         </div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full px-5 md:px-6 flex items-end md:items-center min-h-[100svh] pb-12 md:pb-0">
+      <div className="relative z-10 max-w-6xl mx-auto w-full px-5 md:px-6 flex items-end md:items-center min-h-[100svh] pb-24 md:pb-0">
         <motion.div
           style={{ opacity }}
           className="w-full"
@@ -73,20 +73,14 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="text-center lg:text-left max-w-xl"
           >
-            <h1
-              className="font-serif text-[2.1rem] sm:text-[2.6rem] md:text-[3.4rem] lg:text-[3.8rem] leading-[1.08] font-semibold text-near-black tracking-[-0.01em]"
-              style={{ textShadow: '0 1px 20px rgba(250,247,244,0.8), 0 0px 40px rgba(250,247,244,0.6)' }}
-            >
+            <h1 className="font-serif text-[2.1rem] sm:text-[2.6rem] md:text-[3.4rem] lg:text-[3.8rem] leading-[1.08] font-semibold text-near-black tracking-[-0.01em]">
               Your skin tells
               <br />
               <span className="italic font-light text-taupe">your story.</span>
               <br />
               Not your scars.
             </h1>
-            <p
-              className="mt-4 md:mt-6 text-[0.95rem] md:text-[1.1rem] leading-relaxed text-near-black/70 max-w-md mx-auto lg:mx-0 font-light"
-              style={{ textShadow: '0 1px 16px rgba(250,247,244,0.9)' }}
-            >
+            <p className="mt-4 md:mt-6 text-[0.95rem] md:text-[1.1rem] leading-relaxed text-near-black/60 max-w-md mx-auto lg:mx-0 font-light">
               Medical-grade silicone tape that softens, flattens, and fades scars
               so you can feel comfortable in your own skin again.
             </p>
@@ -100,10 +94,7 @@ export default function Hero() {
               </a>
             </div>
 
-            <p
-              className="mt-4 md:mt-5 text-[0.75rem] md:text-[0.78rem] tracking-[0.08em] uppercase text-near-black/50 font-medium"
-              style={{ textShadow: '0 1px 12px rgba(250,247,244,0.9)' }}
-            >
+            <p className="mt-4 md:mt-5 text-[0.75rem] md:text-[0.78rem] tracking-[0.08em] uppercase text-near-black/40 font-medium">
               Medical-Grade Silicone · Reusable · Latex-Free
             </p>
           </motion.div>
