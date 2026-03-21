@@ -12,6 +12,7 @@ import Reviews from './components/Reviews'
 import FAQ from './components/FAQ'
 import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
+import StickyMobileCTA from './components/StickyMobileCTA'
 
 export default function App() {
   return (
@@ -30,6 +31,7 @@ export default function App() {
       <FAQ />
       <FinalCTA />
       <Footer />
+      <StickyMobileCTA />
     </div>
   )
 }

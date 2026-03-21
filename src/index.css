@@ -34,6 +34,18 @@ body {
   color: var(--color-near-black);
 }
 
+/* Safe area for sticky CTA on notched phones */
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+/* Extra bottom padding on mobile so footer isn't hidden behind sticky CTA */
+@media (max-width: 767px) {
+  footer {
+    padding-bottom: 5rem;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }

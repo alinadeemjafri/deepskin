@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react'
 const faqs = [
   {
     q: "How long until I see results?",
-    a: "Most people notice their scar becoming softer and less raised within 4\u20138 weeks of consistent daily use. For the best results (significant flattening, fading, and smoothing) continue wearing the tape for 3\u20136 months. Older scars may take longer to respond.",
+    a: "Most people notice their scar becoming softer and less raised within 4–8 weeks of consistent daily use. For the best results (significant flattening, fading, and smoothing) continue wearing the tape for 3–6 months. Older scars may take longer to respond.",
   },
   {
     q: "Can I use this on old scars?",
@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: "How do I clean and reuse the tape?",
-    a: "Gently wash the adhesive side with mild soap and warm water. Pat it dry or let it air-dry completely before reapplying. Avoid using alcohol or harsh cleansers, as these can break down the silicone. Each piece can typically be reused for 7\u201314 days depending on wear conditions.",
+    a: "Gently wash the adhesive side with mild soap and warm water. Pat it dry or let it air-dry completely before reapplying. Avoid using alcohol or harsh cleansers, as these can break down the silicone. Each piece can typically be reused for 7–14 days depending on wear conditions.",
   },
   {
     q: "Is it safe for sensitive skin?",
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "How long does one roll last?",
-    a: "Each roll is 60 inches (150 cm) long. Depending on the size of your scar and how much tape you cut per application, a single roll typically lasts 2\u20134 months. Because the tape is reusable, you'll cut new pieces far less often than you might expect.",
+    a: "Each roll is 60 inches (150 cm) long. Depending on the size of your scar and how much tape you cut per application, a single roll typically lasts 2–4 months. Because the tape is reusable, you'll cut new pieces far less often than you might expect.",
   },
 ]
 
@@ -36,12 +36,12 @@ function FAQItem({ faq, isOpen, onToggle }) {
         onClick={onToggle}
         className="w-full flex items-center justify-between py-4 md:py-5 text-left gap-4 group cursor-pointer"
       >
-        <span className="text-[0.9rem] md:text-[0.95rem] font-medium text-near-black group-hover:text-near-black/80 transition-colors">
+        <span className="text-[0.93rem] md:text-[0.95rem] font-medium text-near-black group-hover:text-near-black/80 group-active:text-near-black/80 transition-colors">
           {faq.q}
         </span>
         <ChevronDown
-          size={16}
-          className={`text-taupe shrink-0 transition-transform duration-300 ${
+          size={18}
+          className={`text-taupe shrink-0 transition-transform duration-300 md:w-4 md:h-4 ${
             isOpen ? 'rotate-180' : ''
           }`}
         />
@@ -55,7 +55,7 @@ function FAQItem({ faq, isOpen, onToggle }) {
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             className="overflow-hidden"
           >
-            <p className="pb-5 text-[0.85rem] leading-relaxed text-near-black/50 font-light pr-8">
+            <p className="pb-4 md:pb-5 text-[0.87rem] md:text-[0.85rem] leading-relaxed text-near-black/50 font-light pr-6 md:pr-8">
               {faq.a}
             </p>
           </motion.div>
@@ -69,19 +69,19 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null)
 
   return (
-    <section id="faq" className="py-16 md:py-24 px-6">
+    <section id="faq" className="py-14 md:py-24 px-5 md:px-6">
       <div className="max-w-2xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 md:mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <p className="text-[0.72rem] tracking-[0.15em] uppercase font-semibold text-taupe mb-4">
+          <p className="text-[0.75rem] md:text-[0.72rem] tracking-[0.15em] uppercase font-semibold text-taupe mb-3 md:mb-4">
             FAQ
           </p>
-          <h2 className="font-serif text-[1.9rem] md:text-[2.4rem] leading-[1.12] font-semibold text-near-black">
+          <h2 className="font-serif text-[1.7rem] sm:text-[1.9rem] md:text-[2.4rem] leading-[1.12] font-semibold text-near-black">
             Common questions
           </h2>
         </motion.div>

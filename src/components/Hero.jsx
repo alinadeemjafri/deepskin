@@ -20,27 +20,20 @@ export default function Hero() {
     >
       {/* Full-width background image */}
       <div className="absolute inset-0">
+        {/* Desktop: parallax enabled */}
         <motion.div
           style={{ y: useTransform(scrollYProgress, [0, 1], [0, 60]) }}
-          className="w-full h-full"
+          className="hidden md:block w-full h-full"
         >
           <img
             src="/main-image.jpg"
             alt="Deep Skin scar tape product and application"
             className="w-full h-full object-cover object-right"
           />
-          {/* Gradient fade from left so text is readable */}
           <div
-            className="absolute inset-0 hidden lg:block"
+            className="absolute inset-0"
             style={{
               background: 'linear-gradient(to right, #FAF7F4 0%, #FAF7F4 25%, rgba(250,247,244,0.85) 40%, transparent 65%)',
-            }}
-          />
-          {/* Mobile: stronger gradient since text overlaps more */}
-          <div
-            className="absolute inset-0 lg:hidden"
-            style={{
-              background: 'linear-gradient(to right, #FAF7F4 0%, rgba(250,247,244,0.9) 35%, rgba(250,247,244,0.6) 55%, transparent 80%)',
             }}
           />
           <div
@@ -50,10 +43,26 @@ export default function Hero() {
             }}
           />
         </motion.div>
+
+        {/* Mobile: no parallax (prevents jank), portrait image, center-positioned */}
+        <div className="md:hidden w-full h-full">
+          <img
+            src="/main-image-mobile.png"
+            alt="Deep Skin scar tape product and application"
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Mobile gradient - lighter at top to show product, stronger at bottom for text */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(to bottom, rgba(250,247,244,0.3) 0%, rgba(250,247,244,0.15) 25%, rgba(250,247,244,0.35) 50%, rgba(250,247,244,0.75) 65%, rgba(237,230,221,0.95) 80%, #EDE6DD 100%)',
+            }}
+          />
+        </div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto w-full px-6 flex items-center min-h-[100svh]">
+      <div className="relative z-10 max-w-6xl mx-auto w-full px-5 md:px-6 flex items-end md:items-center min-h-[100svh] pb-24 md:pb-0">
         <motion.div
           style={{ opacity }}
           className="w-full"
@@ -64,40 +73,40 @@ export default function Hero() {
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="text-center lg:text-left max-w-xl"
           >
-            <h1 className="font-serif text-[2.6rem] md:text-[3.4rem] lg:text-[3.8rem] leading-[1.08] font-semibold text-near-black tracking-[-0.01em]">
+            <h1 className="font-serif text-[2.1rem] sm:text-[2.6rem] md:text-[3.4rem] lg:text-[3.8rem] leading-[1.08] font-semibold text-near-black tracking-[-0.01em]">
               Your skin tells
               <br />
               <span className="italic font-light text-taupe">your story.</span>
               <br />
               Not your scars.
             </h1>
-            <p className="mt-5 md:mt-6 text-[1.02rem] md:text-[1.1rem] leading-relaxed text-near-black/60 max-w-md mx-auto lg:mx-0 font-light">
+            <p className="mt-4 md:mt-6 text-[0.95rem] md:text-[1.1rem] leading-relaxed text-near-black/60 max-w-md mx-auto lg:mx-0 font-light">
               Medical-grade silicone tape that softens, flattens, and fades scars
               so you can feel comfortable in your own skin again.
             </p>
 
-            <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center gap-4 lg:justify-start justify-center">
+            <div className="mt-7 md:mt-10 flex flex-col sm:flex-row items-center gap-4 lg:justify-start justify-center">
               <a
                 href="#"
-                className="bg-navy text-white text-[0.9rem] font-medium tracking-wide px-9 py-3.5 rounded-full hover:bg-navy-light transition-all duration-300 hover:shadow-lg hover:shadow-navy/20"
+                className="w-full sm:w-auto text-center bg-navy text-white text-[0.9rem] font-medium tracking-wide px-9 py-3.5 rounded-full hover:bg-navy-light active:scale-[0.97] transition-all duration-300 hover:shadow-lg hover:shadow-navy/20"
               >
                 Shop on Amazon
               </a>
             </div>
 
-            <p className="mt-5 text-[0.78rem] tracking-[0.08em] uppercase text-near-black/40 font-medium">
+            <p className="mt-4 md:mt-5 text-[0.75rem] md:text-[0.78rem] tracking-[0.08em] uppercase text-near-black/40 font-medium">
               Medical-Grade Silicone · Reusable · Latex-Free
             </p>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — hidden on mobile */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:block"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}

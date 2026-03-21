@@ -22,41 +22,41 @@ const steps = [
     icon: Sparkles,
     title: 'See Results',
     description:
-      'With consistent daily use, scars begin to soften and flatten within 4\u20138 weeks. Best results come at 3\u20136 months of continued wear.',
+      'With consistent daily use, scars begin to soften and flatten within 4–8 weeks. Best results come at 3–6 months of continued wear.',
     image: '/before-after.png',
     imageAlt: 'Before and after scar improvement results',
   },
 ]
 
 const schedule = [
-  { days: 'Days 1\u20132', hours: '4 hrs', progress: 'w-[20%]' },
-  { days: 'Days 3\u20134', hours: '8 hrs', progress: 'w-[40%]' },
-  { days: 'Days 5\u20136', hours: '12 hrs', progress: 'w-[60%]' },
-  { days: 'Days 7\u201311', hours: '16\u201320 hrs', progress: 'w-[80%]' },
+  { days: 'Days 1–2', hours: '4 hrs', progress: 'w-[20%]' },
+  { days: 'Days 3–4', hours: '8 hrs', progress: 'w-[40%]' },
+  { days: 'Days 5–6', hours: '12 hrs', progress: 'w-[60%]' },
+  { days: 'Days 7–11', hours: '16–20 hrs', progress: 'w-[80%]' },
   { days: 'Day 12+', hours: '24 hrs', progress: 'w-[100%]' },
 ]
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-16 md:py-24 px-6 bg-white/40">
+    <section id="how-it-works" className="py-14 md:py-24 px-5 md:px-6 bg-white/40">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14 md:mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <p className="text-[0.72rem] tracking-[0.15em] uppercase font-semibold text-taupe mb-4">
+          <p className="text-[0.75rem] md:text-[0.72rem] tracking-[0.15em] uppercase font-semibold text-taupe mb-3 md:mb-4">
             How it works
           </p>
-          <h2 className="font-serif text-[1.9rem] md:text-[2.4rem] leading-[1.12] font-semibold text-near-black">
+          <h2 className="font-serif text-[1.7rem] sm:text-[1.9rem] md:text-[2.4rem] leading-[1.12] font-semibold text-near-black">
             Three simple steps to visible change
           </h2>
         </motion.div>
 
         {/* Steps — alternating layout */}
-        <div className="space-y-12 md:space-y-6 mb-16 md:mb-20">
+        <div className="space-y-8 md:space-y-6 mb-12 md:mb-20">
           {steps.map((step, i) => (
             <motion.div
               key={step.title}
@@ -64,7 +64,7 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: 0.05 }}
-              className={`grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center ${
+              className={`grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12 items-center ${
                 i % 2 === 1 ? 'md:direction-rtl' : ''
               }`}
             >
@@ -74,25 +74,26 @@ export default function HowItWorks() {
                   <img
                     src={step.image}
                     alt={step.imageAlt}
-                    className="w-full h-[240px] md:h-[280px] object-cover object-center"
+                    loading="lazy"
+                    className="w-full aspect-[4/3] md:aspect-auto md:h-[280px] object-cover object-center"
                   />
                 </div>
               </div>
 
               {/* Copy */}
               <div className={`${i % 2 === 1 ? 'md:order-1' : ''}`}>
-                <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center gap-3 mb-3 md:mb-4">
                   <div className="w-10 h-10 rounded-xl bg-cream-dark/60 flex items-center justify-center">
                     <step.icon size={18} className="text-near-black/50" strokeWidth={1.5} />
                   </div>
-                  <span className="text-[0.7rem] tracking-[0.1em] uppercase font-semibold text-taupe">
+                  <span className="text-[0.75rem] md:text-[0.7rem] tracking-[0.1em] uppercase font-semibold text-taupe">
                     Step {i + 1}
                   </span>
                 </div>
-                <h3 className="font-serif text-[1.5rem] md:text-[1.7rem] font-semibold text-near-black mb-3">
+                <h3 className="font-serif text-[1.35rem] md:text-[1.7rem] font-semibold text-near-black mb-2 md:mb-3">
                   {step.title}
                 </h3>
-                <p className="text-[0.9rem] leading-relaxed text-near-black/55 font-light max-w-sm">
+                <p className="text-[0.88rem] md:text-[0.9rem] leading-relaxed text-near-black/55 font-light max-w-sm">
                   {step.description}
                 </p>
               </div>
@@ -106,12 +107,12 @@ export default function HowItWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto bg-white/60 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-taupe/10"
+          className="max-w-2xl mx-auto bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-10 border border-taupe/10"
         >
-          <h3 className="font-serif text-[1.2rem] font-semibold text-near-black text-center mb-8">
+          <h3 className="font-serif text-[1.1rem] md:text-[1.2rem] font-semibold text-near-black text-center mb-6 md:mb-8">
             Recommended wear schedule
           </h3>
-          <div className="space-y-4">
+          <div className="space-y-3 md:space-y-4">
             {schedule.map((item, i) => (
               <motion.div
                 key={item.days}
@@ -119,24 +120,24 @@ export default function HowItWorks() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="flex items-center gap-4"
+                className="flex items-center gap-3 md:gap-4"
               >
-                <span className="text-[0.75rem] font-medium text-near-black/45 w-20 shrink-0">
+                <span className="text-[0.75rem] font-medium text-near-black/45 w-[4.5rem] md:w-20 shrink-0">
                   {item.days}
                 </span>
-                <div className="flex-1 h-7 bg-cream-dark/40 rounded-full overflow-hidden relative">
+                <div className="flex-1 h-6 md:h-7 bg-cream-dark/40 rounded-full overflow-hidden relative">
                   <div
                     className={`h-full bg-gradient-to-r from-taupe/40 to-taupe/60 rounded-full ${item.progress} transition-all`}
                   />
                 </div>
-                <span className="text-[0.75rem] font-semibold text-near-black/60 w-16 text-right shrink-0">
+                <span className="text-[0.75rem] font-semibold text-near-black/60 w-14 md:w-16 text-right shrink-0">
                   {item.hours}
                 </span>
               </motion.div>
             ))}
           </div>
-          <p className="text-center text-[0.75rem] text-near-black/35 mt-6 font-light">
-            Gradually increase wear time. Remove and wash every 1\u20132 days.
+          <p className="text-center text-[0.75rem] text-near-black/35 mt-5 md:mt-6 font-light">
+            Gradually increase wear time. Remove and wash every 1–2 days.
           </p>
         </motion.div>
       </div>

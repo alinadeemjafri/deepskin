@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 const specs = [
-  { label: 'Size', value: '1.6 in \u00d7 60 in Roll (4 cm \u00d7 150 cm)' },
+  { label: 'Size', value: '1.6 in × 60 in Roll (4 cm × 150 cm)' },
   { label: 'Material', value: 'Medical-grade silicone (Polydimethylsiloxane)' },
   {
     label: 'Suitable for',
@@ -12,8 +12,8 @@ const specs = [
 
 export default function ProductDetails() {
   return (
-    <section className="py-16 md:py-24 px-6 bg-white/40">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <section className="py-14 md:py-24 px-5 md:px-6 bg-white/40">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         {/* Unboxing image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -26,6 +26,7 @@ export default function ProductDetails() {
             <img
               src="/flat-lay.png"
               alt="Deep Skin scar tape flat lay"
+              loading="lazy"
               className="w-full max-w-[440px]"
             />
           </div>
@@ -38,10 +39,10 @@ export default function ProductDetails() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-[0.72rem] tracking-[0.15em] uppercase font-semibold text-taupe mb-4">
+          <p className="text-[0.75rem] md:text-[0.72rem] tracking-[0.15em] uppercase font-semibold text-taupe mb-3 md:mb-4">
             Product details
           </p>
-          <h2 className="font-serif text-[1.9rem] md:text-[2.2rem] leading-[1.15] font-semibold text-near-black mb-7">
+          <h2 className="font-serif text-[1.7rem] sm:text-[1.9rem] md:text-[2.2rem] leading-[1.15] font-semibold text-near-black mb-5 md:mb-7">
             What's in the box
           </h2>
 
@@ -49,7 +50,7 @@ export default function ProductDetails() {
             {specs.map((spec, i) => (
               <div
                 key={spec.label}
-                className={`flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3.5 ${
+                className={`flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-6 py-3 md:py-3.5 ${
                   i < specs.length - 1 ? 'border-b border-taupe/12' : ''
                 }`}
               >

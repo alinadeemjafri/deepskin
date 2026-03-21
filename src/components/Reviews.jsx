@@ -44,7 +44,7 @@ function Stars({ count }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <Star
           key={i}
-          size={13}
+          size={14}
           className={i < count ? 'text-taupe fill-taupe' : 'text-taupe/25'}
           strokeWidth={0}
         />
@@ -55,24 +55,24 @@ function Stars({ count }) {
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="py-16 md:py-24 px-6 bg-white/40">
+    <section id="reviews" className="py-14 md:py-24 px-5 md:px-6 bg-white/40">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 md:mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <p className="text-[0.72rem] tracking-[0.15em] uppercase font-semibold text-taupe mb-4">
+          <p className="text-[0.75rem] md:text-[0.72rem] tracking-[0.15em] uppercase font-semibold text-taupe mb-3 md:mb-4">
             Reviews
           </p>
-          <h2 className="font-serif text-[1.9rem] md:text-[2.4rem] leading-[1.12] font-semibold text-near-black">
+          <h2 className="font-serif text-[1.7rem] sm:text-[1.9rem] md:text-[2.4rem] leading-[1.12] font-semibold text-near-black">
             Real people, real progress
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
           {/* PLACEHOLDER: Replace these reviews with real customer testimonials */}
           {reviews.map((review, i) => (
             <motion.div
@@ -81,23 +81,23 @@ export default function Reviews() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="bg-cream-light/80 backdrop-blur-sm rounded-2xl p-6 md:p-7 border border-taupe/8"
+              className="bg-cream-light/80 backdrop-blur-sm rounded-2xl p-5 md:p-7 border border-taupe/8"
             >
               <Stars count={review.stars} />
-              <p className="mt-3.5 text-[0.88rem] leading-relaxed text-near-black/60 font-light italic">
+              <p className="mt-3 md:mt-3.5 text-[0.88rem] leading-relaxed text-near-black/60 font-light italic">
                 "{review.quote}"
               </p>
-              <div className="mt-4 flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-cream-dark flex items-center justify-center">
-                  <span className="text-[0.68rem] font-semibold text-near-black/45">
+              <div className="mt-3.5 md:mt-4 flex items-center gap-3">
+                <div className="w-9 h-9 md:w-8 md:h-8 rounded-full bg-cream-dark flex items-center justify-center">
+                  <span className="text-[0.75rem] md:text-[0.68rem] font-semibold text-near-black/45">
                     {review.name.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <p className="text-[0.8rem] font-medium text-near-black">
+                  <p className="text-[0.82rem] md:text-[0.8rem] font-medium text-near-black">
                     {review.name}
                   </p>
-                  <p className="text-[0.68rem] text-green font-medium">
+                  <p className="text-[0.75rem] md:text-[0.68rem] text-green font-medium">
                     {review.badge}
                   </p>
                 </div>
