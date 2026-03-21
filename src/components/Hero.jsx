@@ -49,7 +49,8 @@ export default function Hero() {
           <img
             src="/main-image-mobile.png"
             alt="Deep Skin scar tape product and application"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: '30% 20%' }}
           />
           {/* Mobile gradient - subtle, just enough for bottom fade */}
           <div
