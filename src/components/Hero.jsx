@@ -25,7 +25,7 @@ export default function Hero() {
           className="w-full h-full"
         >
           <img
-            src="/hero-lifestyle.png"
+            src="/main-image.jpg"
             alt="Deep Skin scar tape product and application"
             className="w-full h-full object-cover object-right"
           />
