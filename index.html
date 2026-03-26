@@ -36,6 +36,10 @@
     <link rel="icon" type="image/png" href="/logo.png" />
     <link rel="apple-touch-icon" href="/logo.png" />
 
+    <!-- Preload hero image for LCP -->
+    <link rel="preload" as="image" href="/main-image-mobile.png" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="/main-image.jpg" media="(min-width: 768px)" />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -165,6 +169,53 @@
         "name": "United Kingdom"
       },
       "priceRange": "$$"
+    }
+    </script>
+
+    <!-- Structured Data: HowTo (GEO-optimised for AI search) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "How to Use Silicone Scar Tape for Best Results",
+      "description": "Step-by-step guide to applying Deep Skin medical-grade silicone scar tape for effective scar treatment on surgical, C-section, burn, and keloid scars.",
+      "totalTime": "PT5M",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Clean and Cut",
+          "text": "Wash and dry the scarred area. Cut a piece of silicone scar tape to fit comfortably over the scar with a small margin on each side.",
+          "position": 1
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Apply and Wear",
+          "text": "Place the tape smoothly over the scar, pressing gently from the centre outward. Start with a few hours a day and gradually build up to 24-hour wear.",
+          "position": 2
+        },
+        {
+          "@type": "HowToStep",
+          "name": "See Results",
+          "text": "With consistent daily use, scars begin to soften and flatten within 4-8 weeks. Best results come at 3-6 months of continued wear. The tape is reusable — wash with mild soap and reapply.",
+          "position": 3
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: WebSite (GEO - helps AI engines identify the site) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Deep Skin",
+      "url": "https://deepskinlab.com",
+      "description": "Deep Skin — medical-grade silicone scar tape for surgical, C-section, burn, and keloid scars. UK-based scar treatment brand.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Deep Skin Lab Ltd"
+      },
+      "inLanguage": "en-GB"
     }
     </script>
   </head>

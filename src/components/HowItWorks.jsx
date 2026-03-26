@@ -8,7 +8,7 @@ const steps = [
     description:
       'Wash and dry the scarred area. Cut a piece of tape to fit comfortably over the scar with a small margin on each side.',
     image: '/close-up.png',
-    imageAlt: 'Close-up of silicone scar tape showing thin flexible texture',
+    imageAlt: 'Close-up of Deep Skin medical-grade silicone scar tape showing thin flexible texture',
   },
   {
     icon: Hand,
@@ -16,7 +16,7 @@ const steps = [
     description:
       'Place the tape smoothly over the scar, pressing gently from the centre outward. Start with a few hours a day and build up gradually.',
     image: '/tape-application.png',
-    imageAlt: 'Applying silicone scar tape to skin',
+    imageAlt: 'Applying Deep Skin silicone scar tape to healed surgical scar',
   },
   {
     icon: Sparkles,
@@ -24,7 +24,7 @@ const steps = [
     description:
       'With consistent daily use, scars begin to soften and flatten within 4–8 weeks. Best results come at 3–6 months of continued wear.',
     image: '/before-after.png',
-    imageAlt: 'Before and after scar improvement results',
+    imageAlt: 'Before and after scar treatment results with silicone scar tape',
   },
 ]
 

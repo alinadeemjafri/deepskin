@@ -15,7 +15,7 @@ export default function Science() {
           <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(43,43,43,0.05)] border border-taupe/10 bg-cream-light">
             <img
               src="/science-diagram.png"
-              alt="How silicone tape works on scar tissue"
+              alt="Diagram showing how medical-grade silicone scar tape works on scar tissue"
               loading="lazy"
               className="w-full max-w-[420px]"
             />
@@ -33,21 +33,21 @@ export default function Science() {
             The science
           </p>
           <h2 className="font-serif text-[1.7rem] sm:text-[1.9rem] md:text-[2.4rem] leading-[1.12] font-semibold text-near-black mb-4 md:mb-5">
-            Why silicone works when nothing else does
+            Why silicone scar treatment works when nothing else does
           </h2>
           <div className="space-y-3 md:space-y-3.5 text-[0.9rem] md:text-[0.92rem] leading-relaxed text-near-black/55 font-light">
             <p>
-              Silicone is the gold standard in clinical scar management. It
-              creates a barrier that locks in moisture and regulates collagen
-              production at the scar site.
+              Silicone is the gold standard in clinical scar management, recommended
+              by NHS dermatologists and surgeons. It creates a barrier that locks in
+              moisture and regulates collagen production at the scar site.
             </p>
             <p>
-              Over time, raised, discoloured scars gradually flatten,
-              soften, and fade — the same approach used in hospitals worldwide.
+              Over time, raised, discoloured scars — including keloid and
+              hypertrophic scars — gradually flatten, soften, and fade.
             </p>
             <p className="hidden sm:block">
-              Deep Skin simply makes it accessible, comfortable, and easy to use
-              at home.
+              Deep Skin silicone scar tape simply makes clinical-grade scar care
+              accessible, comfortable, and easy to use at home.
             </p>
           </div>
         </motion.div>

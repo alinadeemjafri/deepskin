@@ -8,7 +8,7 @@ export default function Footer() {
               DEEP SKIN
             </p>
             <p className="mt-1 text-[0.75rem] md:text-[0.72rem] text-near-black/35 font-light">
-              Distributed by Deep Skin Lab Ltd., London
+              Medical-grade silicone scar tape · Distributed by Deep Skin Lab Ltd., London, UK
             </p>
           </div>
 

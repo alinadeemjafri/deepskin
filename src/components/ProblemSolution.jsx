@@ -29,9 +29,9 @@ export default function ProblemSolution() {
               do very little.
             </p>
             <p>
-              Deep Skin is different. Our medical-grade silicone creates the
-              ideal healing environment — the same approach
-              recommended by dermatologists and plastic surgeons worldwide.
+              Deep Skin is different. Our medical-grade silicone scar tape creates the
+              ideal healing environment — the same scar treatment approach
+              recommended by dermatologists and plastic surgeons across the UK and worldwide.
             </p>
           </div>
         </motion.div>
@@ -47,7 +47,7 @@ export default function ProblemSolution() {
           <div className="relative rounded-2xl overflow-hidden shadow-[0_16px_64px_rgba(43,43,43,0.08)]">
             <img
               src="/scar.png"
-              alt="Scar on skin"
+              alt="Raised hypertrophic scar before silicone scar tape treatment"
               loading="lazy"
               className="w-full max-w-[480px] object-cover"
             />

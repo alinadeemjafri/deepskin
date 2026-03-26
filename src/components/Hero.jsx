@@ -50,8 +50,9 @@ export default function Hero() {
             Not your scars.
           </h1>
           <p className="mt-4 text-[0.95rem] leading-relaxed text-near-black/60 max-w-sm font-light">
-            Medical-grade silicone tape that softens, flattens, and fades scars
-            so you can feel comfortable in your own skin again.
+            Medical-grade silicone scar tape that softens, flattens, and fades
+            surgical, C-section, and keloid scars — so you can feel comfortable
+            in your own skin again.
           </p>
 
           <div className="mt-7 flex flex-col items-center gap-4 w-full">
@@ -113,16 +114,17 @@ export default function Hero() {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="text-left max-w-xl"
             >
-              <h1 className="font-serif text-[3.4rem] lg:text-[3.8rem] leading-[1.08] font-semibold text-near-black tracking-[-0.01em]">
+              <p role="presentation" className="font-serif text-[3.4rem] lg:text-[3.8rem] leading-[1.08] font-semibold text-near-black tracking-[-0.01em]">
                 Your skin tells
                 <br />
                 <span className="italic font-light text-taupe">your story.</span>
                 <br />
                 Not your scars.
-              </h1>
+              </p>
               <p className="mt-6 text-[1.1rem] leading-relaxed text-near-black/60 max-w-md font-light">
-                Medical-grade silicone tape that softens, flattens, and fades scars
-                so you can feel comfortable in your own skin again.
+                Medical-grade silicone scar tape that softens, flattens, and fades
+                surgical, C-section, and keloid scars — so you can feel comfortable
+                in your own skin again.
               </p>
 
               <div className="mt-10 flex flex-row items-center gap-4">

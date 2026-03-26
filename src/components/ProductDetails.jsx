@@ -25,7 +25,7 @@ export default function ProductDetails() {
           <div className="rounded-2xl overflow-hidden shadow-[0_8px_40px_rgba(43,43,43,0.06)]">
             <img
               src="/flat-lay.png"
-              alt="Deep Skin scar tape flat lay"
+              alt="Deep Skin silicone scar tape product flat lay showing roll and packaging"
               loading="lazy"
               className="w-full max-w-[440px]"
             />

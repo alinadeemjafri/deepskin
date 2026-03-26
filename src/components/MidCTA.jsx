@@ -11,7 +11,7 @@ export default function MidCTA() {
         className="text-center"
       >
         <p className="text-[0.9rem] md:text-[0.92rem] text-near-black/50 font-light mb-4 md:mb-5">
-          Ready to start your scar healing journey?
+          Ready to start your scar treatment journey?
         </p>
         <a
           href="#"

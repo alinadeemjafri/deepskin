@@ -15,7 +15,7 @@ export default function BeforeAfter() {
             Results
           </p>
           <h2 className="font-serif text-[1.7rem] sm:text-[1.9rem] md:text-[2.4rem] leading-[1.12] font-semibold text-near-black">
-            Visible difference, worn with confidence
+            Visible scar healing results, worn with confidence
           </h2>
         </motion.div>
 
@@ -29,7 +29,7 @@ export default function BeforeAfter() {
           <div className="rounded-2xl overflow-hidden shadow-[0_12px_48px_rgba(43,43,43,0.08)] border border-taupe/10">
             <img
               src="/before-after.png"
-              alt="Before and after scar improvement with Deep Skin tape"
+              alt="Before and after scar improvement results using Deep Skin silicone scar tape"
               loading="lazy"
               className="w-full"
             />

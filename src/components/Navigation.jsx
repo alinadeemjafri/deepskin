@@ -30,6 +30,7 @@ export default function Navigation() {
 
   return (
     <nav
+      aria-label="Main navigation"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? 'bg-cream/70 backdrop-blur-xl shadow-[0_1px_0_0_rgba(200,185,168,0.3)]'

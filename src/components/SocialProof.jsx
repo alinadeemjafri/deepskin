@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
-import { Shield, Award, Heart, RefreshCw } from 'lucide-react'
+import { Shield, Award, Heart, RefreshCw, MapPin } from 'lucide-react'
 
 const items = [
   { icon: Shield, label: 'Medical-Grade Silicone' },
   { icon: Award, label: 'ISO 13485 Certified' },
   { icon: Heart, label: 'Latex & Cruelty Free' },
   { icon: RefreshCw, label: 'Reusable & Washable' },
+  { icon: MapPin, label: 'UK Brand' },
 ]
 
 export default function SocialProof() {
