@@ -18,18 +18,20 @@ export default function App() {
   return (
     <div className="min-h-screen bg-cream">
       <Navigation />
-      <Hero />
-      <SocialProof />
-      <ProblemSolution />
-      <Science />
-      <HowItWorks />
-      <Benefits />
-      <ProductDetails />
-      <BeforeAfter />
-      <MidCTA />
-      <Reviews />
-      <FAQ />
-      <FinalCTA />
+      <main>
+        <Hero />
+        <SocialProof />
+        <ProblemSolution />
+        <Science />
+        <HowItWorks />
+        <Benefits />
+        <ProductDetails />
+        <BeforeAfter />
+        <MidCTA />
+        <Reviews />
+        <FAQ />
+        <FinalCTA />
+      </main>
       <Footer />
       <StickyMobileCTA />
     </div>
