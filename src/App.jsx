@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import SocialProof from './components/SocialProof'
@@ -34,6 +35,7 @@ export default function App() {
       </main>
       <Footer />
       <StickyMobileCTA />
+      <Analytics />
     </div>
   )
 }
