@@ -16,7 +16,7 @@ const COMPANY = {
   registeredOffice: 'London, United Kingdom',
   companyNumber: '', // e.g. '12345678' (Companies House)
   icoRegistration: '', // e.g. 'ZB123456' (ICO Data Protection Register)
-  privacyEmail: 'privacy@deepskinlab.com',
+  privacyEmail: 'deepskinlab@gmail.com',
 }
 
 function Section({ id, number, title, children }) {
