@@ -13,7 +13,7 @@ export default function Footer() {
           </div>
 
           <div className="flex items-center gap-6 md:gap-5">
-            <a href="#" className="text-[0.8rem] md:text-[0.75rem] text-near-black/40 hover:text-near-black/65 active:text-near-black/65 transition-colors py-1">
+            <a href="/privacypolicy" className="text-[0.8rem] md:text-[0.75rem] text-near-black/40 hover:text-near-black/65 active:text-near-black/65 transition-colors py-1">
               Privacy Policy
             </a>
             <a href="#" className="text-[0.8rem] md:text-[0.75rem] text-near-black/40 hover:text-near-black/65 active:text-near-black/65 transition-colors py-1">
