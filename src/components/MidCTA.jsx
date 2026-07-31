@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { AMAZON_URL } from '../config'
 
 export default function MidCTA() {
   return (
@@ -14,7 +15,9 @@ export default function MidCTA() {
           Ready to start your scar treatment journey?
         </p>
         <a
-          href="#"
+          href={AMAZON_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block w-full sm:w-auto text-center bg-navy text-white text-[0.9rem] font-medium tracking-wide px-9 py-3.5 rounded-full hover:bg-navy-light active:scale-[0.97] transition-all duration-300 hover:shadow-lg hover:shadow-navy/20"
         >
           Shop on Amazon

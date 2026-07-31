@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { AMAZON_URL } from '../config'
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
@@ -58,7 +59,9 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="#"
+            href={AMAZON_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-navy text-white text-[0.82rem] font-medium tracking-[0.02em] px-6 py-2.5 rounded-full hover:bg-navy-light transition-colors duration-300"
           >
             Shop on Amazon
@@ -97,7 +100,9 @@ export default function Navigation() {
                 </a>
               ))}
               <a
-                href="#"
+                href={AMAZON_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-navy text-white text-sm font-medium tracking-wide px-8 py-3 rounded-full mt-4"
               >
                 Shop on Amazon

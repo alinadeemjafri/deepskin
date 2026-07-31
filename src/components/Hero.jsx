@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import { AMAZON_URL } from '../config'
 
 export default function Hero() {
   const ref = useRef(null)
@@ -57,7 +58,9 @@ export default function Hero() {
 
           <div className="mt-7 flex flex-col items-center gap-4 w-full">
             <a
-              href="#"
+              href={AMAZON_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full max-w-xs text-center bg-navy text-white text-[0.9rem] font-medium tracking-wide px-9 py-3.5 rounded-full active:scale-[0.97] transition-all duration-300"
             >
               Shop on Amazon
@@ -129,7 +132,9 @@ export default function Hero() {
 
               <div className="mt-10 flex flex-row items-center gap-4">
                 <a
-                  href="#"
+                  href={AMAZON_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-center bg-navy text-white text-[0.9rem] font-medium tracking-wide px-9 py-3.5 rounded-full hover:bg-navy-light active:scale-[0.97] transition-all duration-300 hover:shadow-lg hover:shadow-navy/20"
                 >
                   Shop on Amazon

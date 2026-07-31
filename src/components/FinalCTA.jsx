@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { AMAZON_URL } from '../config'
 
 export default function FinalCTA() {
   return (
@@ -33,7 +34,9 @@ export default function FinalCTA() {
             </p>
             <div className="mt-6 md:mt-7">
               <a
-                href="#"
+                href={AMAZON_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block w-full sm:w-auto text-center bg-cream text-navy text-[0.9rem] font-semibold tracking-wide px-9 py-3.5 rounded-full hover:bg-white active:scale-[0.97] transition-all duration-300 hover:shadow-lg hover:shadow-black/20"
               >
                 Shop on Amazon
