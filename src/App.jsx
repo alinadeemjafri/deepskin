@@ -1,16 +1,9 @@
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
-import SocialProof from './components/SocialProof'
-import ProblemSolution from './components/ProblemSolution'
 import Science from './components/Science'
 import HowItWorks from './components/HowItWorks'
-import Benefits from './components/Benefits'
-import ProductDetails from './components/ProductDetails'
-import BeforeAfter from './components/BeforeAfter'
-import MidCTA from './components/MidCTA'
+import RecommendedTime from './components/RecommendedTime'
 import Reviews from './components/Reviews'
-import FAQ from './components/FAQ'
-import FinalCTA from './components/FinalCTA'
 import Footer from './components/Footer'
 import StickyMobileCTA from './components/StickyMobileCTA'
 
@@ -20,17 +13,10 @@ export default function App() {
       <Navigation />
       <main>
         <Hero />
-        <SocialProof />
-        <ProblemSolution />
         <Science />
         <HowItWorks />
-        <Benefits />
-        <ProductDetails />
-        <BeforeAfter />
-        <MidCTA />
+        <RecommendedTime />
         <Reviews />
-        <FAQ />
-        <FinalCTA />
       </main>
       <Footer />
       <StickyMobileCTA />

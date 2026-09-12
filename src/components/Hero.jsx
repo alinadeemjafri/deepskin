@@ -1,169 +1,101 @@
-import { motion, useScroll, useTransform } from 'framer-motion'
-import { useRef } from 'react'
-import { AMAZON_URL } from '../config'
+import { motion as Motion } from 'framer-motion'
+import { Leaf, Rabbit, Shield } from 'lucide-react'
+
+const heroFeatures = [
+  { icon: Shield, lines: ['Medical-grade', 'silicone'] },
+  { icon: Rabbit, lines: ['Cruelty free'] },
+  { icon: Leaf, lines: ['Discreet', 'everyday care'] },
+]
+
+function FeatureRow({ mobile = false }) {
+  return (
+    <div className={`flex items-stretch ${mobile ? 'mx-auto mt-5 w-[92%] max-w-[23rem]' : 'mt-10 w-[31rem]'}`}>
+      {heroFeatures.map((feature, index) => (
+        <div
+          key={feature.lines.join('-')}
+          className={`relative flex flex-1 flex-col items-center justify-start px-3 text-center ${
+            index > 0 ? 'before:absolute before:inset-y-1 before:left-0 before:w-px before:bg-cocoa/65' : ''
+          }`}
+        >
+          <feature.icon
+            aria-hidden="true"
+            strokeWidth={1.65}
+            className={`${mobile ? 'size-8' : 'size-9'} text-cocoa`}
+          />
+          <p className={`${mobile ? 'mt-2 text-[0.68rem] leading-[1.25]' : 'mt-2.5 text-[0.72rem] leading-[1.25]'} font-semibold uppercase tracking-[-0.01em] text-cocoa`}>
+            {feature.lines.map((line) => (
+              <span key={line} className="block">{line}</span>
+            ))}
+          </p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function Eyebrow({ centred = false }) {
+  return (
+    <div className={`flex items-center gap-4 ${centred ? 'justify-center' : ''}`}>
+      <p className="text-[0.69rem] font-semibold uppercase tracking-[0.28em] text-cocoa sm:text-[0.76rem] lg:text-[0.82rem]">
+        Advanced scar care
+      </p>
+      <span aria-hidden="true" className="h-px w-14 bg-cocoa/65 sm:w-20" />
+    </div>
+  )
+}
 
 export default function Hero() {
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start start', 'end start'],
-  })
-  const y = useTransform(scrollYProgress, [0, 1], [0, 100])
-  const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0])
-
   return (
-    <>
-      {/* ===== MOBILE HERO: Stacked layout (image top, content bottom) ===== */}
-      <section
-        className="md:hidden flex flex-col min-h-[100svh]"
-        style={{
-          background: 'linear-gradient(180deg, #FAF7F4 0%, #F5F0EB 60%, #EDE6DD 100%)',
-        }}
+    <section id="top" className="relative isolate h-[820px] overflow-hidden bg-[#f3e2d9] md:h-[max(720px,100svh)]">
+      <picture className="absolute inset-0 -z-20">
+        <source media="(max-width: 767px)" srcSet="/hero-mobile.jpg" />
+        <img
+          src="/hero-desktop.jpg"
+          alt="Deep Skin medical-grade silicone scar tape roll beside its product box"
+          fetchPriority="high"
+          className="h-full w-full object-cover object-center"
+        />
+      </picture>
+
+      <Motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.55 }}
+        className="absolute inset-x-0 top-[4.2rem] px-4 text-center md:hidden"
       >
-        {/* Image area — takes up ~55% of viewport, no overlay hiding the product */}
-        <div className="relative w-full h-[55svh] flex-shrink-0 overflow-hidden">
-          <img
-            src="/main-image-mobile.png"
-            alt="Deep Skin scar tape product and application"
-            className="w-full h-full object-cover object-center"
-          />
-          {/* Subtle bottom fade only — blends image into the cream content area */}
-          <div
-            className="absolute inset-x-0 bottom-0 h-20"
-            style={{
-              background: 'linear-gradient(to bottom, transparent, #F5F0EB)',
-            }}
-          />
-        </div>
+        <Eyebrow centred />
+        <h1 className="mt-4 font-serif text-[4rem] font-medium leading-[0.84] tracking-[-0.045em] text-cocoa">
+          A more
+          <span className="block">confident you.</span>
+        </h1>
+        <p className="mx-auto mt-4 max-w-[22rem] text-[0.93rem] font-medium leading-[1.45] tracking-[-0.012em] text-cocoa/88">
+          Medical-grade silicone scar tape designed<br className="hidden min-[365px]:block" />
+          for real care, visible progress and<br className="hidden min-[365px]:block" />
+          a smoother tomorrow.
+        </p>
+        <FeatureRow mobile />
+      </Motion.div>
 
-        {/* Content area — sits below image on solid background */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-          className="flex-1 flex flex-col items-center justify-center px-6 pb-28 pt-4 text-center"
-        >
-          <h1 className="font-serif text-[2.1rem] sm:text-[2.6rem] leading-[1.08] font-semibold text-near-black tracking-[-0.01em]">
-            Your skin tells
-            <br />
-            <span className="italic font-light text-taupe">your story.</span>
-            <br />
-            Not your scars.
-          </h1>
-          <p className="mt-4 text-[0.95rem] leading-relaxed text-near-black/60 max-w-sm font-light">
-            Medical-grade silicone scar tape that softens, flattens, and fades
-            surgical, C-section, and keloid scars — so you can feel comfortable
-            in your own skin again.
-          </p>
-
-          <div className="mt-7 flex flex-col items-center gap-4 w-full">
-            <a
-              href={AMAZON_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full max-w-xs text-center bg-navy text-white text-[0.9rem] font-medium tracking-wide px-9 py-3.5 rounded-full active:scale-[0.97] transition-all duration-300"
-            >
-              Shop on Amazon
-            </a>
-          </div>
-
-          <p className="mt-4 text-[0.75rem] tracking-[0.08em] uppercase text-near-black/40 font-medium">
-            Medical-Grade Silicone · Reusable · Latex-Free
-          </p>
-        </motion.div>
-      </section>
-
-      {/* ===== DESKTOP HERO: Original overlay layout (unchanged) ===== */}
-      <section
-        ref={ref}
-        className="relative min-h-[100svh] overflow-hidden hidden md:block"
-        style={{
-          background: 'linear-gradient(180deg, #FAF7F4 0%, #F5F0EB 60%, #EDE6DD 100%)',
-        }}
-      >
-        <div className="absolute inset-0">
-          <motion.div
-            style={{ y: useTransform(scrollYProgress, [0, 1], [0, 60]) }}
-            className="w-full h-full"
-          >
-            <img
-              src="/main-image.jpg"
-              alt="Deep Skin scar tape product and application"
-              className="w-full h-full object-cover object-right"
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background: 'linear-gradient(to right, #FAF7F4 0%, #FAF7F4 25%, rgba(250,247,244,0.85) 40%, transparent 65%)',
-              }}
-            />
-            <div
-              className="absolute inset-0"
-              style={{
-                background: 'linear-gradient(to top, #EDE6DD 0%, transparent 15%)',
-              }}
-            />
-          </motion.div>
-        </div>
-
-        <div className="relative z-10 max-w-6xl mx-auto w-full px-6 flex items-center min-h-[100svh]">
-          <motion.div
-            style={{ opacity }}
-            className="w-full"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="text-left max-w-xl"
-            >
-              <p role="presentation" className="font-serif text-[3.4rem] lg:text-[3.8rem] leading-[1.08] font-semibold text-near-black tracking-[-0.01em]">
-                Your skin tells
-                <br />
-                <span className="italic font-light text-taupe">your story.</span>
-                <br />
-                Not your scars.
-              </p>
-              <p className="mt-6 text-[1.1rem] leading-relaxed text-near-black/60 max-w-md font-light">
-                Medical-grade silicone scar tape that softens, flattens, and fades
-                surgical, C-section, and keloid scars — so you can feel comfortable
-                in your own skin again.
-              </p>
-
-              <div className="mt-10 flex flex-row items-center gap-4">
-                <a
-                  href={AMAZON_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-center bg-navy text-white text-[0.9rem] font-medium tracking-wide px-9 py-3.5 rounded-full hover:bg-navy-light active:scale-[0.97] transition-all duration-300 hover:shadow-lg hover:shadow-navy/20"
-                >
-                  Shop on Amazon
-                </a>
-              </div>
-
-              <p className="mt-5 text-[0.78rem] tracking-[0.08em] uppercase text-near-black/40 font-medium">
-                Medical-Grade Silicone · Reusable · Latex-Free
-              </p>
-            </motion.div>
-          </motion.div>
-        </div>
-
-        {/* Scroll indicator */}
-        <motion.div
+      <div className="absolute inset-0 hidden md:block">
+        <Motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+          transition={{ duration: 0.55 }}
+          className="absolute left-[5.7%] top-[14.5%] w-[43%] max-w-[43rem]"
         >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
-            className="w-5 h-8 border-2 border-taupe/50 rounded-full flex justify-center pt-1.5"
-          >
-            <div className="w-1 h-2 bg-taupe/60 rounded-full" />
-          </motion.div>
-        </motion.div>
-      </section>
-    </>
+          <Eyebrow />
+          <h1 className="mt-6 font-serif text-[clamp(4rem,6.15vw,6.4rem)] font-medium leading-[0.94] tracking-[-0.045em] text-cocoa">
+            A more
+            <span className="block">confident you.</span>
+          </h1>
+          <p className="mt-5 max-w-[32rem] text-[clamp(1rem,1.5vw,1.45rem)] font-medium leading-[1.42] tracking-[-0.015em] text-cocoa/88">
+            Medical-grade silicone scar tape designed<br className="hidden lg:block" />
+            for real care, visible progress and<br className="hidden lg:block" />
+            a smoother tomorrow.
+          </p>
+          <FeatureRow />
+        </Motion.div>
+      </div>
+    </section>
   )
 }

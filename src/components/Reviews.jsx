@@ -1,52 +1,54 @@
-import { motion } from 'framer-motion'
-import { Star } from 'lucide-react'
+import { motion as Motion } from 'framer-motion'
+import { ArrowUpRight, PackageCheck, Star } from 'lucide-react'
+import { AMAZON_URL } from '../config'
 
-/*
- * PLACEHOLDER TESTIMONIALS
- * ========================
- * These reviews are placeholder content written for layout purposes.
- * Replace them with real customer reviews before going live.
- */
 const reviews = [
   {
+    name: 'Sam Fields',
+    title: 'Very pleased',
     stars: 5,
+    date: '1 September 2026',
+    badge: 'Verified Purchase',
     quote:
-      "I had my appendix out six months ago and the scar was raised and pink. After eight weeks of wearing this tape daily, it's noticeably flatter and the colour has faded. I wish I'd started sooner.",
-    name: 'Sarah M.',
-    badge: 'Verified Buyer',
+      'Really pleased so far. Had a gash whilst playing football and was recommended to use silicone scar tape once it had healed. I’ve been using this for about a week and I’m impressed as the scar has reduced such that I barely notice it on my skin. It sticks well without feeling irritating.',
   },
   {
+    name: 'Navleen Kaur',
+    title: 'Superb Quality',
     stars: 5,
+    date: '25 August 2026',
+    badge: 'Verified Purchase',
     quote:
-      "Post C-section, I tried two other silicone products before this one. Deep Skin actually stays put. I can wear it all day under my clothes without it peeling at the edges. The scar is softer than it's been in months.",
-    name: 'Priya K.',
-    badge: 'Verified Buyer',
+      'I got this tape for a deep cut on my leg. One of the things that really impressed me was the quality of the tape and the medical grade silicone. The tape stays put and doesn’t curl up around the edges despite me walking a lot all day. A few days into using it and the scar looks flatter and the redness is also subsiding! Really happy with the early results so far.',
   },
   {
+    name: 'Alisha Ibrahim',
+    title: 'Really impressed after just a few days',
     stars: 5,
+    date: '30 August 2026',
+    badge: 'Verified Purchase',
     quote:
-      "I have a burn scar on my forearm that I've been self-conscious about for years. It's early days, but the itching stopped almost immediately and it already looks less angry. Comfortable enough to sleep in.",
-    name: 'James R.',
-    badge: 'Verified Buyer',
+      'Received this about 5–6 days ago after a pretty bad gash on my arm and have found it really helpful so far. The redness has already gone down quite a bit which I wasn’t expecting this quickly. The adhesive is really strong and stays on well but I barely notice it’s there. I’ve even left it on while showering and it stayed in place fine. Still early days but very happy with it so far.',
   },
   {
-    stars: 4,
-    quote:
-      "Good quality tape, easy to cut to size. I'm using it on a keloid on my chest and after about six weeks it's definitely less raised. It does take some getting used to wearing it all day but the results are worth it.",
-    name: 'Anna T.',
-    badge: 'Verified Buyer',
+    name: 'Maxine Candlin',
+    title: 'Use regularly',
+    stars: 5,
+    date: '10 August 2026',
+    badge: 'Verified Purchase',
+    quote: 'Definitely flattened my knee replacement scar',
   },
 ]
 
-function Stars({ count }) {
+function ReviewStars({ count }) {
   return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
+    <div className="flex gap-0.5" aria-label={`${count} out of 5 stars`}>
+      {Array.from({ length: 5 }).map((_, index) => (
         <Star
-          key={i}
+          key={index}
           size={14}
-          className={i < count ? 'text-taupe fill-taupe' : 'text-taupe/25'}
-          strokeWidth={0}
+          strokeWidth={index < count ? 0 : 1.3}
+          className={index < count ? 'fill-rating text-rating' : 'text-rating/40'}
         />
       ))}
     </div>
@@ -55,56 +57,71 @@ function Stars({ count }) {
 
 export default function Reviews() {
   return (
-    <section id="reviews" className="py-14 md:py-24 px-5 md:px-6 bg-white/40">
-      <div className="max-w-5xl mx-auto">
-        <motion.div
+    <section id="reviews" className="scroll-mt-16 bg-cream px-5 py-20 sm:px-7 md:py-28 lg:px-10">
+      <div className="mx-auto max-w-7xl">
+        <Motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8 md:mb-12"
+          className="overflow-hidden rounded-[2rem] border border-cocoa/8 bg-[linear-gradient(135deg,#fffaf7_0%,#f1ded5_100%)] shadow-[0_25px_70px_rgba(91,55,42,0.09)]"
         >
-          <p className="text-[0.75rem] md:text-[0.72rem] tracking-[0.15em] uppercase font-semibold text-taupe mb-3 md:mb-4">
-            Reviews
-          </p>
-          <h2 className="font-serif text-[1.7rem] sm:text-[1.9rem] md:text-[2.4rem] leading-[1.12] font-semibold text-near-black">
-            Real people, real progress
-          </h2>
-        </motion.div>
+          <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
+            <div className="flex flex-col justify-center border-b border-cocoa/8 p-8 sm:p-11 lg:border-b-0 lg:border-r lg:p-14">
+              <p className="section-label">Amazon reviews</p>
+              <div className="mt-8 [&_svg]:size-8">
+                <ReviewStars count={5} />
+              </div>
+              <h2 className="mt-6 font-serif text-[2.7rem] font-medium leading-none tracking-[-0.025em] text-cocoa sm:text-[3.35rem]">
+                Loved by customers.
+              </h2>
+            </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
-          {/* PLACEHOLDER: Replace these reviews with real customer testimonials */}
-          {reviews.map((review, i) => (
-            <motion.div
-              key={review.name}
+            <div className="flex flex-col justify-center p-8 sm:p-11 lg:p-14">
+              <PackageCheck size={30} strokeWidth={1.4} className="text-rose-dark" />
+              <h2 className="mt-6 max-w-xl font-serif text-[2.5rem] font-medium leading-[1.02] tracking-[-0.02em] text-cocoa sm:text-[3.2rem]">
+                See what people are saying.
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-cocoa/62">
+                Explore more customer feedback about Deep Skin on our Amazon listing.
+              </p>
+              <a
+                href={AMAZON_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex min-h-12 w-fit cursor-pointer items-center gap-2 rounded-full bg-cocoa px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-cocoa-light"
+              >
+                See more on Amazon
+                <ArrowUpRight size={16} />
+              </a>
+            </div>
+          </div>
+        </Motion.div>
+
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
+          {reviews.map((review, index) => (
+            <Motion.article
+              key={`${review.name}-${review.date}`}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="bg-cream-light/80 backdrop-blur-sm rounded-2xl p-5 md:p-7 border border-taupe/8"
+              transition={{ duration: 0.5, delay: index * 0.05 }}
+              className="flex flex-col rounded-[1.5rem] border border-cocoa/8 bg-cream-light p-6 sm:p-8"
             >
-              <Stars count={review.stars} />
-              <p className="mt-3 md:mt-3.5 text-[0.88rem] leading-relaxed text-near-black/60 font-light italic">
-                "{review.quote}"
-              </p>
-              <div className="mt-3.5 md:mt-4 flex items-center gap-3">
-                <div className="w-9 h-9 md:w-8 md:h-8 rounded-full bg-cream-dark flex items-center justify-center">
-                  <span className="text-[0.75rem] md:text-[0.68rem] font-semibold text-near-black/45">
-                    {review.name.charAt(0)}
-                  </span>
-                </div>
-                <div>
-                  <p className="text-[0.82rem] md:text-[0.8rem] font-medium text-near-black">
-                    {review.name}
-                  </p>
-                  <p className="text-[0.75rem] md:text-[0.68rem] text-green font-medium">
-                    {review.badge}
-                  </p>
-                </div>
+              <ReviewStars count={review.stars} />
+              <h3 className="mt-4 font-serif text-[1.55rem] font-semibold leading-tight text-cocoa">{review.title}</h3>
+              <blockquote className="mt-3 flex-1 text-sm leading-6 text-cocoa/62">
+                “{review.quote}”
+              </blockquote>
+              <div className="mt-6 border-t border-cocoa/8 pt-4">
+                <p className="text-sm font-semibold text-cocoa">{review.name}</p>
+                <p className="mt-1 text-[0.7rem] leading-5 text-cocoa/43">
+                  Reviewed in the United Kingdom on {review.date}
+                </p>
+                <p className="mt-1 text-[0.7rem] font-semibold text-rose-dark">{review.badge}</p>
               </div>
-            </motion.div>
+            </Motion.article>
           ))}
-          {/* END PLACEHOLDER REVIEWS */}
         </div>
       </div>
     </section>

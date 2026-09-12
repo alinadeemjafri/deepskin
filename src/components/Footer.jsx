@@ -1,35 +1,29 @@
+import { AMAZON_URL } from '../config'
+
 export default function Footer() {
   return (
-    <footer className="bg-cream-dark/50 border-t border-taupe/12 py-8 md:py-10 px-5 md:px-6">
-      <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-5">
-          <div className="text-center md:text-left">
-            <p className="font-serif text-lg font-semibold tracking-[0.04em] text-near-black">
-              DEEP SKIN
-            </p>
-            <p className="mt-1 text-[0.75rem] md:text-[0.72rem] text-near-black/35 font-light">
-              Medical-grade silicone scar tape · Distributed by Deep Skin Lab Ltd., London, UK
+    <footer className="border-t border-cocoa/8 bg-cream-dark px-5 py-9 sm:px-7 md:py-11 lg:px-10">
+      <div className="mx-auto max-w-7xl">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="font-serif text-xl font-semibold tracking-[0.07em] text-cocoa">DEEP SKIN</p>
+            <p className="mt-1.5 text-xs leading-5 text-cocoa/47">
+              Medical-grade silicone scar tape · Deep Skin Lab Ltd., London, UK
             </p>
           </div>
-
-          <div className="flex items-center gap-6 md:gap-5">
-            <a href="/privacypolicy" className="text-[0.8rem] md:text-[0.75rem] text-near-black/40 hover:text-near-black/65 active:text-near-black/65 transition-colors py-1">
-              Privacy Policy
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+            <a href="/privacypolicy" className="min-h-11 py-3 text-xs font-medium text-cocoa/55 transition-colors hover:text-cocoa">
+              Privacy policy
             </a>
-            <a href="#" className="text-[0.8rem] md:text-[0.75rem] text-near-black/40 hover:text-near-black/65 active:text-near-black/65 transition-colors py-1">
-              Terms
-            </a>
-            <a href="#" className="text-[0.8rem] md:text-[0.75rem] text-near-black/40 hover:text-near-black/65 active:text-near-black/65 transition-colors py-1">
-              Contact
+            <a href={AMAZON_URL} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 text-xs font-medium text-cocoa/55 transition-colors hover:text-cocoa">
+              Amazon listing
             </a>
           </div>
         </div>
-
-        <div className="mt-6 pt-5 border-t border-taupe/12">
-          <p className="text-[0.75rem] md:text-[0.65rem] leading-relaxed text-near-black/30 text-center max-w-3xl mx-auto font-light">
-            Deep Skin Scar Tape is a Class I medical device. For external use
-            only on closed, healed skin. Results may vary. This product is not
-            intended to diagnose, treat, cure, or prevent any disease.
+        <div className="mt-6 border-t border-cocoa/8 pt-5">
+          <p className="max-w-4xl text-[0.68rem] leading-5 text-cocoa/38">
+            For external use on clean, dry, closed and fully healed skin only. Do not apply to open wounds.
+            Stop use if irritation occurs. Results and treatment time vary.
           </p>
         </div>
       </div>

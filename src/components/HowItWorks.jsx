@@ -1,145 +1,80 @@
-import { motion } from 'framer-motion'
-import { Scissors, Hand, Sparkles } from 'lucide-react'
+import { motion as Motion } from 'framer-motion'
 
 const steps = [
   {
-    icon: Scissors,
-    title: 'Clean & Cut',
-    description:
-      'Wash and dry the scarred area. Cut a piece of tape to fit comfortably over the scar with a small margin on each side.',
-    image: '/close-up.png',
-    imageAlt: 'Close-up of Deep Skin medical-grade silicone scar tape showing thin flexible texture',
+    title: 'Clean and prepare',
+    text: 'Clean the area and make sure fully healed skin is dry. Cut the tape to the size you need.',
+    image: '/how-step-clean.jpg',
+    alt: 'Cleaning dry, fully healed skin before applying silicone scar tape',
   },
   {
-    icon: Hand,
-    title: 'Apply & Wear',
-    description:
-      'Place the tape smoothly over the scar, pressing gently from the centre outward. Start with a few hours a day and build up gradually.',
-    image: '/tape-application.png',
-    imageAlt: 'Applying Deep Skin silicone scar tape to healed surgical scar',
+    title: 'Apply and press',
+    text: 'Place the tape over the scar and press gently so the silicone sits smoothly against the skin.',
+    image: '/how-step-apply.jpg',
+    alt: 'Applying a cut strip of silicone scar tape over healed skin',
   },
   {
-    icon: Sparkles,
-    title: 'See Results',
-    description:
-      'With consistent daily use, scars begin to soften and flatten within 4–8 weeks. Best results come at 3–6 months of continued wear.',
-    image: '/before-after.png',
-    imageAlt: 'Before and after scar treatment results with silicone scar tape',
+    title: 'Wear consistently',
+    text: 'Build up gradually, then aim to wear the tape for at least 12 hours each day.',
+    image: '/how-step-wear.jpg',
+    alt: 'Silicone scar tape lying flat against the skin',
   },
-]
-
-const schedule = [
-  { days: 'Days 1–2', hours: '4 hrs', progress: 'w-[20%]' },
-  { days: 'Days 3–4', hours: '8 hrs', progress: 'w-[40%]' },
-  { days: 'Days 5–6', hours: '12 hrs', progress: 'w-[60%]' },
-  { days: 'Days 7–11', hours: '16–20 hrs', progress: 'w-[80%]' },
-  { days: 'Day 12+', hours: '24 hrs', progress: 'w-[100%]' },
+  {
+    title: 'Remove and reuse',
+    text: 'Gently remove and clean the tape with mild soap and water. Let it air dry before reapplying.',
+    image: '/how-step-reuse.jpg',
+    alt: 'Gently removing reusable silicone scar tape from healed skin',
+  },
 ]
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-14 md:py-24 px-5 md:px-6 bg-white/40">
-      <div className="max-w-5xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
+    <section id="how-to-use" className="scroll-mt-16 bg-white/45 px-5 py-20 sm:px-7 md:py-28 lg:px-10">
+      <div className="mx-auto max-w-7xl">
+        <Motion.div
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10 md:mb-16"
+          className="mx-auto max-w-3xl text-center"
         >
-          <p className="text-[0.75rem] md:text-[0.72rem] tracking-[0.15em] uppercase font-semibold text-taupe mb-3 md:mb-4">
-            How it works
+          <p className="section-label">How to use</p>
+          <h2 className="section-title mt-4">Simple steps. Real consistency.</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-cocoa/60">
+            A straightforward daily routine designed to make scar care easier to maintain.
           </p>
-          <h2 className="font-serif text-[1.7rem] sm:text-[1.9rem] md:text-[2.4rem] leading-[1.12] font-semibold text-near-black">
-            Three simple steps to visible change
-          </h2>
-        </motion.div>
+        </Motion.div>
 
-        {/* Steps — alternating layout */}
-        <div className="space-y-8 md:space-y-6 mb-12 md:mb-20">
-          {steps.map((step, i) => (
-            <motion.div
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+          {steps.map((step, index) => (
+            <Motion.article
               key={step.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.5, delay: 0.05 }}
-              className={`grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-12 items-center ${
-                i % 2 === 1 ? 'md:direction-rtl' : ''
-              }`}
+              viewport={{ once: true, margin: '-50px' }}
+              transition={{ duration: 0.55, delay: index * 0.06 }}
+              className="group overflow-hidden rounded-[1.6rem] border border-cocoa/8 bg-cream-light shadow-[0_18px_50px_rgba(74,45,34,0.06)]"
             >
-              {/* Image */}
-              <div className={`${i % 2 === 1 ? 'md:order-2' : ''}`}>
-                <div className="rounded-2xl overflow-hidden bg-cream-light shadow-[0_8px_40px_rgba(43,43,43,0.06)]">
-                  <img
-                    src={step.image}
-                    alt={step.imageAlt}
-                    loading="lazy"
-                    className="w-full aspect-[4/3] md:aspect-auto md:h-[280px] object-cover object-center"
-                  />
-                </div>
+              <div className="relative overflow-hidden">
+                <img
+                  src={step.image}
+                  alt={step.alt}
+                  loading="lazy"
+                  width="286"
+                  height="326"
+                  className="aspect-[286/326] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
+                />
+                <span className="absolute bottom-4 left-4 flex size-10 items-center justify-center rounded-full border border-white/40 bg-white/80 font-serif text-lg font-semibold text-cocoa shadow-sm backdrop-blur-sm">
+                  {index + 1}
+                </span>
               </div>
-
-              {/* Copy */}
-              <div className={`${i % 2 === 1 ? 'md:order-1' : ''}`}>
-                <div className="flex items-center gap-3 mb-3 md:mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-cream-dark/60 flex items-center justify-center">
-                    <step.icon size={18} className="text-near-black/50" strokeWidth={1.5} />
-                  </div>
-                  <span className="text-[0.75rem] md:text-[0.7rem] tracking-[0.1em] uppercase font-semibold text-taupe">
-                    Step {i + 1}
-                  </span>
-                </div>
-                <h3 className="font-serif text-[1.35rem] md:text-[1.7rem] font-semibold text-near-black mb-2 md:mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-[0.88rem] md:text-[0.9rem] leading-relaxed text-near-black/55 font-light max-w-sm">
-                  {step.description}
-                </p>
+              <div className="p-6">
+                <h3 className="font-serif text-[1.55rem] font-semibold leading-tight text-cocoa">{step.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-cocoa/60">{step.text}</p>
               </div>
-            </motion.div>
+            </Motion.article>
           ))}
         </div>
-
-        {/* Usage schedule */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto bg-white/60 backdrop-blur-sm rounded-2xl p-6 md:p-10 border border-taupe/10"
-        >
-          <h3 className="font-serif text-[1.1rem] md:text-[1.2rem] font-semibold text-near-black text-center mb-6 md:mb-8">
-            Recommended wear schedule
-          </h3>
-          <div className="space-y-3 md:space-y-4">
-            {schedule.map((item, i) => (
-              <motion.div
-                key={item.days}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.06 }}
-                className="flex items-center gap-3 md:gap-4"
-              >
-                <span className="text-[0.75rem] font-medium text-near-black/45 w-[4.5rem] md:w-20 shrink-0">
-                  {item.days}
-                </span>
-                <div className="flex-1 h-6 md:h-7 bg-cream-dark/40 rounded-full overflow-hidden relative">
-                  <div
-                    className={`h-full bg-gradient-to-r from-taupe/40 to-taupe/60 rounded-full ${item.progress} transition-all`}
-                  />
-                </div>
-                <span className="text-[0.75rem] font-semibold text-near-black/60 w-14 md:w-16 text-right shrink-0">
-                  {item.hours}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-          <p className="text-center text-[0.75rem] text-near-black/35 mt-5 md:mt-6 font-light">
-            Gradually increase wear time. Remove and wash every 1–2 days.
-          </p>
-        </motion.div>
       </div>
     </section>
   )

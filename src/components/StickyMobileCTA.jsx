@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion as Motion, AnimatePresence } from 'framer-motion'
 import { AMAZON_URL } from '../config'
 
 export default function StickyMobileCTA() {
@@ -17,22 +17,22 @@ export default function StickyMobileCTA() {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.div
+        <Motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-xl border-t border-taupe/20 px-5 py-3 safe-bottom"
+          className="fixed inset-x-0 bottom-0 z-50 border-t border-cocoa/10 bg-cream/92 px-5 py-3 backdrop-blur-xl md:hidden safe-bottom"
         >
           <a
             href={AMAZON_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 w-full bg-navy text-white text-[0.9rem] font-medium tracking-wide py-3.5 rounded-full active:scale-[0.97] transition-transform duration-150"
+            className="flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-cocoa py-3.5 text-[0.9rem] font-semibold tracking-wide text-white transition-colors duration-200 active:bg-cocoa-light"
           >
             Shop on Amazon
           </a>
-        </motion.div>
+        </Motion.div>
       )}
     </AnimatePresence>
   )

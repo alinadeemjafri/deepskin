@@ -1,53 +1,100 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #F5F0EB;
-  --color-cream-light: #FAF7F4;
-  --color-cream-dark: #EDE6DD;
-  --color-near-black: #2B2B2B;
-  --color-navy: #3C2415;
-  --color-navy-light: #4A3020;
-  --color-taupe: #C8B9A8;
-  --color-taupe-light: #D8CCC0;
-  --color-green: #4A7C59;
-  --color-green-light: #5A9469;
+  --color-cream: #fbf6f2;
+  --color-cream-light: #fffaf7;
+  --color-cream-dark: #f4e9e2;
+  --color-blush: #f1ddd4;
+  --color-blush-deep: #e5bcae;
+  --color-rose: #c98973;
+  --color-rose-dark: #9c614f;
+  --color-cocoa: #392824;
+  --color-cocoa-light: #553a33;
+  --color-rating: #b8782e;
 
   --font-serif: 'Cormorant Garamond', 'Georgia', serif;
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+:root {
+  color-scheme: light;
+}
+
 html {
   scroll-behavior: smooth;
+  background: var(--color-cream);
 }
 
 body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--color-cream);
+  color: var(--color-cocoa);
   font-family: var(--font-sans);
-  color: var(--color-near-black);
-  background-color: var(--color-cream);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-rose-dark);
+  outline-offset: 4px;
 }
 
 ::selection {
-  background-color: var(--color-taupe);
-  color: var(--color-near-black);
+  background: var(--color-blush-deep);
+  color: var(--color-cocoa);
 }
 
-/* Safe area for sticky CTA on notched phones */
+.section-label {
+  color: var(--color-rose-dark);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: var(--color-cocoa);
+  font-family: var(--font-serif);
+  font-size: clamp(2.55rem, 5vw, 4.25rem);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+}
+
 .safe-bottom {
   padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
 }
 
-/* Extra bottom padding on mobile so footer isn't hidden behind sticky CTA */
 @media (max-width: 767px) {
   footer {
-    padding-bottom: 5rem;
+    padding-bottom: 6.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 7px;
 }
 
 ::-webkit-scrollbar-track {
@@ -55,10 +102,6 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-taupe);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-near-black);
+  border-radius: 999px;
+  background: var(--color-blush-deep);
 }
