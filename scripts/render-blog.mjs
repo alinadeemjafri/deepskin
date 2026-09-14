@@ -97,7 +97,7 @@ function renderIndex() {
     })),
   }
 
-  const body = `<main><section class="hero"><div class="wrap"><p class="eyebrow">Deep Skin journal</p><h1>Scar Care Daily.</h1><p class="intro">Clear, carefully sourced explainers about scars and everyday scar care—without miracle claims.</p></div></section><section class="wrap grid">${articles.map(articleCard).join('')}</section></main>`
+  const body = `<main><section class="hero"><div class="wrap"><p class="eyebrow">Deep Skin journal</p><h1>Scar Care Daily.</h1><p class="intro">Clear, carefully sourced explainers about scars and everyday scar care, without miracle claims.</p></div></section><section class="wrap grid">${articles.map(articleCard).join('')}</section></main>`
   return pageShell({
     title: 'Scar Care Daily | Evidence-aware scar care from Deep Skin',
     description: 'Carefully sourced, plain-English explainers about scars, silicone sheets and everyday scar care from Deep Skin.',
