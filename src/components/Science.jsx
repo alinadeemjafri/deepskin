@@ -50,21 +50,21 @@ const mobileLayers = [
   {
     id: 'outer',
     icon: Wind,
-    title: 'Protective outer layer',
-    text: 'Designed for comfortable everyday wear.',
+    title: 'Breathable outer layer',
+    text: 'Keeps dirt out while allowing the area to breathe.',
   },
   {
     id: 'core',
     icon: Droplet,
-    title: 'Medical-grade silicone layer',
-    text: 'Soft and flexible against fully healed skin.',
+    title: 'German-grade silicone core',
+    text: 'Helps lock in moisture for an optimal scar-healing environment.',
     detailImage: '/silicone-core-detail.png',
   },
   {
     id: 'adhesive',
     icon: Leaf,
-    title: 'Self-adhesive layer',
-    text: 'Helps each strip stay in place during your routine.',
+    title: 'Gentle adhesive layer',
+    text: 'Designed to stay comfortably in place without unnecessary irritation.',
   },
 ]
 
@@ -187,18 +187,18 @@ export default function Science() {
 
             <div className="absolute inset-x-0 top-0 z-10 px-6 pt-7">
               <p className="text-[0.64rem] font-semibold uppercase tracking-[0.28em] text-cocoa/65">
-                Silicone scar care
+                Backed by science
               </p>
 
               <h3 className="mt-4 max-w-[19rem] font-serif text-[2.6rem] font-medium leading-[0.95] tracking-[-0.04em] text-cocoa">
-                Simple care.
+                A simple solution.
                 <br />
-                Consistent routine.
+                Real results.
               </h3>
 
               <p className="mt-5 max-w-[18.5rem] text-[0.86rem] font-medium leading-[1.55] text-cocoa/72">
-                Silicone sheets and gels are widely used as a non-invasive option
-                in scar-management guidance. Evidence quality varies by outcome.
+                Silicone-based products are widely used in scar management to
+                help improve the appearance of scars from surgery, injury and burns.
               </p>
             </div>
           </div>
@@ -207,16 +207,16 @@ export default function Science() {
         {/* INTRO */}
         <div className="px-5 pt-10">
           <h2 className="font-serif text-[3.45rem] font-medium leading-[0.9] tracking-[-0.045em] text-cocoa">
-            Made for
+            Designed
             <br />
-            daily care,
+            to heal,
             <br />
             layer by layer.
           </h2>
 
           <p className="mt-6 max-w-md text-[0.98rem] font-medium leading-7 text-cocoa/76">
-            Soft, flexible medical-grade silicone sits comfortably against fully
-            healed skin for extended daily wear.
+            Medical-grade silicone creates the ideal environment for smoother,
+            flatter, healthier-looking scars.
           </p>
         </div>
 
@@ -356,7 +356,7 @@ export default function Science() {
               </h3>
 
               <p className="mt-1.5 text-xs leading-4 text-cocoa/68">
-                Soft and flexible for extended wear.
+                Clinically proven scar care.
               </p>
             </div>
 
@@ -384,7 +384,7 @@ export default function Science() {
             />
 
             <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cocoa/75">
-              Simple care. Consistent routine.
+              Real science. Real confidence.
             </p>
           </div>
         </div>
