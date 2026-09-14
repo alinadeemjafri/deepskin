@@ -34,7 +34,7 @@ export default function ScarCareDaily() {
               Research, made useful.
             </h2>
             <p className="mt-5 max-w-2xl text-[0.98rem] leading-7 text-cocoa/65">
-              Clear, carefully sourced explainers about scars and everyday scar care—without miracle claims.
+              Clear, carefully sourced explainers about scars and everyday scar care, without miracle claims.
             </p>
           </div>
 
