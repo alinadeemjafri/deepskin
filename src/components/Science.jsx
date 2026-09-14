@@ -12,35 +12,35 @@ const layerCallouts = [
   {
     icon: Shield,
     title: 'Medical-grade silicone',
-    text: 'Soft and flexible for extended wear.',
+    text: 'Clinically proven scar care.',
     desktopClass: 'left-[81.5%] top-[6.8%] w-[16%]',
     iconClass: 'bg-[#ead9d0]',
   },
   {
     icon: Waves,
-    title: 'Flexible & discreet',
-    text: 'Moves with you for everyday wear.',
+    title: 'Ultra-thin & flexible',
+    text: 'Moves with you discreetly.',
     desktopClass: 'left-[81.5%] top-[28.6%] w-[17%]',
     iconClass: 'border border-white/55 bg-white/16',
   },
   {
     icon: Wind,
-    title: 'Protective outer layer',
-    text: 'Made for comfortable everyday wear.',
+    title: 'Breathable outer layer',
+    text: 'Keeps dirt out.',
     desktopClass: 'left-[5.8%] top-[49.1%] w-[26%]',
     iconClass: 'bg-[#ead9d0]',
   },
   {
     icon: Droplet,
-    title: 'Silicone layer',
-    text: 'Soft and flexible against the skin.',
+    title: 'Silicone core',
+    text: 'Locks in moisture for optimal healing.',
     desktopClass: 'left-[5.8%] top-[59.3%] w-[27%]',
     iconClass: 'bg-[#ead9d0]',
   },
   {
     icon: Leaf,
-    title: 'Self-adhesive layer',
-    text: 'Helps each strip stay in place.',
+    title: 'Gentle adhesive layer',
+    text: 'Stays in place without irritation.',
     desktopClass: 'left-[5.8%] top-[69.9%] w-[28%]',
     iconClass: 'bg-[#ead9d0]',
   },
@@ -50,21 +50,21 @@ const mobileLayers = [
   {
     id: 'outer',
     icon: Wind,
-    title: 'Protective outer layer',
-    text: 'Designed for comfortable everyday wear.',
+    title: 'Breathable outer layer',
+    text: 'Keeps dirt out while allowing the area to breathe.',
   },
   {
     id: 'core',
     icon: Droplet,
-    title: 'Medical-grade silicone layer',
-    text: 'Soft and flexible against fully healed skin.',
-    detailImage: '/silicone-core-detail.jpg',
+    title: 'German-grade silicone core',
+    text: 'Helps lock in moisture for an optimal scar-healing environment.',
+    detailImage: '/silicone-core-detail.png',
   },
   {
     id: 'adhesive',
     icon: Leaf,
-    title: 'Self-adhesive layer',
-    text: 'Helps each strip stay in place during your routine.',
+    title: 'Gentle adhesive layer',
+    text: 'Designed to stay comfortably in place without unnecessary irritation.',
   },
 ]
 
@@ -118,7 +118,7 @@ export default function Science() {
 
   useEffect(() => {
     const img = new Image()
-    img.src = '/silicone-core-detail.jpg'
+    img.src = '/silicone-core-detail.png'
   }, [])
 
   const selectedLayer =
@@ -159,7 +159,7 @@ export default function Science() {
             "
           >
             <img
-              src="/science-backed-mobile.jpg"
+              src="/science-backed-mobile.png"
               alt=""
               aria-hidden="true"
               loading="lazy"
@@ -187,18 +187,18 @@ export default function Science() {
 
             <div className="absolute inset-x-0 top-0 z-10 px-6 pt-7">
               <p className="text-[0.64rem] font-semibold uppercase tracking-[0.28em] text-cocoa/65">
-                Silicone scar care
+                Backed by science
               </p>
 
               <h3 className="mt-4 max-w-[19rem] font-serif text-[2.6rem] font-medium leading-[0.95] tracking-[-0.04em] text-cocoa">
-                Simple care.
+                A simple solution.
                 <br />
-                Consistent routine.
+                Real results.
               </h3>
 
               <p className="mt-5 max-w-[18.5rem] text-[0.86rem] font-medium leading-[1.55] text-cocoa/72">
-                Silicone sheets and gels are widely used as a non-invasive option
-                in scar-management guidance. Evidence quality varies by outcome.
+                Silicone-based products are widely used in scar management to
+                help improve the appearance of scars from surgery, injury and burns.
               </p>
             </div>
           </div>
@@ -207,23 +207,23 @@ export default function Science() {
         {/* INTRO */}
         <div className="px-5 pt-10">
           <h2 className="font-serif text-[3.45rem] font-medium leading-[0.9] tracking-[-0.045em] text-cocoa">
-            Made for
+            Designed
             <br />
-            daily care,
+            to heal,
             <br />
             layer by layer.
           </h2>
 
           <p className="mt-6 max-w-md text-[0.98rem] font-medium leading-7 text-cocoa/76">
-            Soft, flexible medical-grade silicone sits comfortably against fully
-            healed skin for extended daily wear.
+            Medical-grade silicone creates the ideal environment for smoother,
+            flatter, healthier-looking scars.
           </p>
         </div>
 
         {/* INTERACTIVE IMAGE */}
         <div className="relative mt-5 h-[340px] overflow-hidden">
           <img
-            src="/science-layers-mobile.jpg"
+            src="/science-layers-mobile.png"
             alt="Three-layer construction of Deep Skin silicone scar tape"
             loading="lazy"
             className="absolute inset-0 h-full w-full scale-[1.08] object-cover object-[center_82%]"
@@ -356,7 +356,7 @@ export default function Science() {
               </h3>
 
               <p className="mt-1.5 text-xs leading-4 text-cocoa/68">
-                Soft and flexible for extended wear.
+                Clinically proven scar care.
               </p>
             </div>
 
@@ -384,7 +384,7 @@ export default function Science() {
             />
 
             <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-cocoa/75">
-              Simple care. Consistent routine.
+              Real science. Real confidence.
             </p>
           </div>
         </div>
@@ -423,19 +423,19 @@ export default function Science() {
 
         <div className="absolute left-[5.8%] top-[12.2%] z-10 w-[44%]">
           <h2 className="font-serif text-[clamp(3.5rem,6.15vw,5.55rem)] font-medium leading-[0.98] tracking-[-0.045em] text-cocoa">
-            Made for
+            Designed
             <br />
-            daily care,
+            to heal,
             <br />
             layer by layer.
           </h2>
 
           <p className="mt-6 max-w-[29rem] text-[clamp(1rem,1.65vw,1.45rem)] font-medium leading-[1.35] tracking-[-0.015em] text-cocoa/78">
-            Soft, flexible medical-grade silicone
+            Medical-grade silicone creates the
             <br className="hidden lg:block" />
-            sits comfortably against fully healed skin
+            ideal environment for smoother,
             <br className="hidden lg:block" />
-            for extended daily wear.
+            flatter, healthier-looking scars.
           </p>
         </div>
 

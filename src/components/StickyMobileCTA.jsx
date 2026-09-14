@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion as Motion, AnimatePresence } from 'framer-motion'
-import AmazonLink from './AmazonLink'
+import { AMAZON_URL } from '../config'
 
 export default function StickyMobileCTA() {
   const [visible, setVisible] = useState(false)
@@ -24,12 +24,14 @@ export default function StickyMobileCTA() {
           transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="fixed inset-x-0 bottom-0 z-50 border-t border-cocoa/10 bg-cream/92 px-5 py-3 backdrop-blur-xl md:hidden safe-bottom"
         >
-          <AmazonLink
-            placement="mobile_sticky"
+          <a
+            href={AMAZON_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-full bg-cocoa py-3.5 text-[0.9rem] font-semibold tracking-wide text-white transition-colors duration-200 active:bg-cocoa-light"
           >
             Shop on Amazon
-          </AmazonLink>
+          </a>
         </Motion.div>
       )}
     </AnimatePresence>

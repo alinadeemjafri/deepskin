@@ -1,4 +1,4 @@
-import AmazonLink from './AmazonLink'
+import { AMAZON_URL } from '../config'
 
 export default function Footer() {
   return (
@@ -15,12 +15,9 @@ export default function Footer() {
             <a href="/privacypolicy" className="min-h-11 py-3 text-xs font-medium text-cocoa/55 transition-colors hover:text-cocoa">
               Privacy policy
             </a>
-            <a href="/scar-care-daily/" className="min-h-11 py-3 text-xs font-medium text-cocoa/55 transition-colors hover:text-cocoa">
-              Scar Care Daily
-            </a>
-            <AmazonLink placement="footer" className="min-h-11 py-3 text-xs font-medium text-cocoa/55 transition-colors hover:text-cocoa">
+            <a href={AMAZON_URL} target="_blank" rel="noopener noreferrer" className="min-h-11 py-3 text-xs font-medium text-cocoa/55 transition-colors hover:text-cocoa">
               Amazon listing
-            </AmazonLink>
+            </a>
           </div>
         </div>
         <div className="mt-6 border-t border-cocoa/8 pt-5">

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion as Motion } from 'framer-motion'
 import { ArrowUpRight, Star } from 'lucide-react'
-import AmazonLink from './AmazonLink'
+import { AMAZON_URL } from '../config'
 
 const reviews = [
   {
@@ -244,7 +244,7 @@ export default function Reviews() {
               text-cocoa/60
             "
           >
-            Experiences shared by customers who made
+            Real feedback from customers making
             Deep Skin part of their scar care routine.
           </p>
         </Motion.div>
@@ -562,8 +562,10 @@ export default function Reviews() {
 
         <div className="mt-10 text-center">
 
-          <AmazonLink
-            placement="reviews"
+          <a
+            href={AMAZON_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               inline-flex
               min-h-12
@@ -589,7 +591,7 @@ export default function Reviews() {
               size={16}
               strokeWidth={1.7}
             />
-          </AmazonLink>
+          </a>
 
         </div>
 
