@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node scripts/render-blog.mjs",
-    "blog:generate": "node scripts/generate-blog.mjs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
