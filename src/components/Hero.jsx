@@ -1,3 +1,4 @@
+
 import { motion as Motion } from 'framer-motion'
 import { Leaf, Rabbit, Shield } from 'lucide-react'
 import { AMAZON_URL } from '../config'
@@ -60,19 +61,23 @@ export default function Hero() {
       {/* MOBILE HERO */}
       <section
         id="top"
-        className="bg-cream pt-16 md:hidden"
+        className="relative md:hidden"
       >
-        <Motion.img
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.45 }}
-          src="/hero-mobile.jpg"
-          alt="Deep Skin advanced silicone scar tape"
-          fetchPriority="high"
-          className="block h-auto w-full"
-        />
+        {/* CROPPED MOBILE IMAGE */}
+        <div className="overflow-hidden">
+          <Motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.45 }}
+            src="/hero-mobile-v2.jpg"
+            alt="Deep Skin advanced silicone scar tape"
+            fetchPriority="high"
+            className="block h-auto w-full -mb-[35px]"
+          />
+        </div>
 
-        <div className="px-5 pb-7 pt-4">
+        {/* MOBILE CTA DIRECTLY BELOW HERO */}
+        <div className="-mt-1 bg-[#f7efeb] px-5 pb-6 pt-3">
           <a
             href={AMAZON_URL}
             target="_blank"
@@ -84,7 +89,7 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* DESKTOP HERO — unchanged */}
+      {/* DESKTOP HERO */}
       <section className="relative isolate hidden h-[max(720px,100svh)] overflow-hidden bg-[#f3e2d9] md:block">
         <img
           src="/hero-desktop.jpg"

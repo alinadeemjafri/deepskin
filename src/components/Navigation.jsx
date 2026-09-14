@@ -15,33 +15,54 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 32)
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80)
+    }
+
     handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    window.addEventListener('scroll', handleScroll, {
+      passive: true,
+    })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+
+    return () => {
+      document.body.style.overflow = ''
+    }
   }, [mobileOpen])
 
   return (
     <nav
       aria-label="Main navigation"
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || mobileOpen
-          ? 'border-b border-cocoa/8 bg-cream/90 shadow-[0_8px_30px_rgba(62,42,34,0.04)] backdrop-blur-xl'
-          : 'bg-transparent'
+        mobileOpen
+          ? 'border-b border-cocoa/8 bg-cream/95 shadow-[0_8px_30px_rgba(62,42,34,0.04)] backdrop-blur-xl'
+          : scrolled
+            ? 'border-b border-cocoa/8 bg-cream/90 shadow-[0_8px_30px_rgba(62,42,34,0.04)] backdrop-blur-xl'
+            : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 sm:px-7 lg:h-20 lg:px-10">
         <a
           href="#top"
           aria-label="Deep Skin home"
-          className="font-serif text-[1.45rem] font-semibold tracking-[0.08em] text-cocoa transition-opacity hover:opacity-70"
+          className="inline-flex items-center font-serif text-[1.45rem] font-semibold tracking-[0.08em] text-cocoa transition-opacity hover:opacity-70"
         >
-          DEEP SKIN
+          <span>DEEP SKIN</span>
+
+          <span
+            aria-label="Registered trademark"
+            className="ml-[1px] -translate-y-[0.36rem] font-sans text-[0.76rem] font-medium leading-none tracking-normal"
+          >
+            ®
+          </span>
         </a>
 
         <div className="hidden items-center gap-7 lg:flex">
@@ -54,6 +75,7 @@ export default function Navigation() {
               {link.label}
             </a>
           ))}
+
           <a
             href={AMAZON_URL}
             target="_blank"
@@ -66,13 +88,17 @@ export default function Navigation() {
 
         <button
           type="button"
-          className="inline-flex size-11 cursor-pointer items-center justify-center rounded-full text-cocoa transition-colors hover:bg-white/50 lg:hidden"
+          className="inline-flex size-11 cursor-pointer items-center justify-center rounded-full text-cocoa transition-colors hover:bg-white/40 lg:hidden"
           onClick={() => setMobileOpen((open) => !open)}
           aria-expanded={mobileOpen}
           aria-controls="mobile-navigation"
           aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileOpen ? (
+            <X size={22} />
+          ) : (
+            <Menu size={23} strokeWidth={1.8} />
+          )}
         </button>
       </div>
 
@@ -80,10 +106,21 @@ export default function Navigation() {
         {mobileOpen && (
           <Motion.div
             id="mobile-navigation"
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
+            initial={{
+              opacity: 0,
+              y: -8,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              y: -8,
+            }}
+            transition={{
+              duration: 0.2,
+            }}
             className="fixed inset-x-0 top-16 z-40 min-h-[calc(100svh-4rem)] border-t border-cocoa/8 bg-cream/98 px-5 backdrop-blur-xl lg:hidden"
           >
             <div className="mx-auto flex max-w-sm flex-col items-stretch gap-2 pt-8">
@@ -97,6 +134,7 @@ export default function Navigation() {
                   {link.label}
                 </a>
               ))}
+
               <a
                 href={AMAZON_URL}
                 target="_blank"

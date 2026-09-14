@@ -1,5 +1,6 @@
+import { useEffect, useRef, useState } from 'react'
 import { motion as Motion } from 'framer-motion'
-import { ArrowUpRight, PackageCheck, Star } from 'lucide-react'
+import { ArrowUpRight, Star } from 'lucide-react'
 import { AMAZON_URL } from '../config'
 
 const reviews = [
@@ -36,19 +37,63 @@ const reviews = [
     stars: 5,
     date: '10 August 2026',
     badge: 'Verified Purchase',
-    quote: 'Definitely flattened my knee replacement scar',
+    quote:
+      'Definitely flattened my knee replacement scar',
+  },
+  {
+    name: 'Maher',
+    title: 'Works like a charm!',
+    stars: 5,
+    date: '28 August 2026',
+    badge: 'Verified Purchase',
+    quote:
+      'Amazing product, it actually helped in removing the scarring from my burn mark!!',
+  },
+  {
+    name: 'mihai neaga',
+    title: 'Surprisingly well!!',
+    stars: 5,
+    date: '13 August 2026',
+    badge: 'Verified Purchase',
+    quote:
+      'This worked really well for my mum. After using it for a week I see noticeable change!!! Quite surprised by how well it has worked!',
+  },
+  {
+    name: 'Hussnain Mudassar',
+    title: 'Awesome',
+    stars: 5,
+    date: '9 September 2026',
+    badge: 'Verified Purchase',
+    quote:
+      'Loved it, simple and actually helpful.',
+  },
+  {
+    name: 'JE Ross',
+    title: 'Fantastic',
+    stars: 5,
+    date: '2 August 2026',
+    badge: 'Verified Purchase',
+    quote:
+      'I recently got a pretty bad cut on my arm that left quite a nasty scar. Came across this scar tape and decided to give it a shot. I can easily trim to the needed length, it sticks pretty well and doesn’t hurt to take off. It’s been four days and I can feel my scar is starting to fade already. Highly recommend!',
   },
 ]
 
 function ReviewStars({ count }) {
   return (
-    <div className="flex gap-0.5" aria-label={`${count} out of 5 stars`}>
+    <div
+      className="flex gap-0.5"
+      aria-label={`${count} out of 5 stars`}
+    >
       {Array.from({ length: 5 }).map((_, index) => (
         <Star
           key={index}
-          size={14}
+          size={15}
           strokeWidth={index < count ? 0 : 1.3}
-          className={index < count ? 'fill-rating text-rating' : 'text-rating/40'}
+          className={
+            index < count
+              ? 'fill-rating text-rating'
+              : 'text-rating/40'
+          }
         />
       ))}
     </div>
@@ -56,73 +101,500 @@ function ReviewStars({ count }) {
 }
 
 export default function Reviews() {
-  return (
-    <section id="reviews" className="scroll-mt-16 bg-cream px-5 py-20 sm:px-7 md:py-28 lg:px-10">
-      <div className="mx-auto max-w-7xl">
-        <Motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.6 }}
-          className="overflow-hidden rounded-[2rem] border border-cocoa/8 bg-[linear-gradient(135deg,#fffaf7_0%,#f1ded5_100%)] shadow-[0_25px_70px_rgba(91,55,42,0.09)]"
-        >
-          <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
-            <div className="flex flex-col justify-center border-b border-cocoa/8 p-8 sm:p-11 lg:border-b-0 lg:border-r lg:p-14">
-              <p className="section-label">Amazon reviews</p>
-              <div className="mt-8 [&_svg]:size-8">
-                <ReviewStars count={5} />
-              </div>
-              <h2 className="mt-6 font-serif text-[2.7rem] font-medium leading-none tracking-[-0.025em] text-cocoa sm:text-[3.35rem]">
-                Loved by customers.
-              </h2>
-            </div>
+  const carouselRef = useRef(null)
+  const [activeIndex, setActiveIndex] = useState(0)
 
-            <div className="flex flex-col justify-center p-8 sm:p-11 lg:p-14">
-              <PackageCheck size={30} strokeWidth={1.4} className="text-rose-dark" />
-              <h2 className="mt-6 max-w-xl font-serif text-[2.5rem] font-medium leading-[1.02] tracking-[-0.02em] text-cocoa sm:text-[3.2rem]">
-                See what people are saying.
-              </h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-cocoa/62">
-                Explore more customer feedback about Deep Skin on our Amazon listing.
-              </p>
-              <a
-                href={AMAZON_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-flex min-h-12 w-fit cursor-pointer items-center gap-2 rounded-full bg-cocoa px-7 py-3.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-cocoa-light"
-              >
-                See more on Amazon
-                <ArrowUpRight size={16} />
-              </a>
-            </div>
+  useEffect(() => {
+    const carousel = carouselRef.current
+
+    if (!carousel) return
+
+    const handleScroll = () => {
+      const cards = Array.from(
+        carousel.querySelectorAll('[data-review-card]')
+      )
+
+      if (!cards.length) return
+
+      const carouselRect = carousel.getBoundingClientRect()
+
+      const carouselCenter =
+        carouselRect.left + carouselRect.width / 2
+
+      let closestIndex = 0
+      let closestDistance = Infinity
+
+      cards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect()
+
+        const cardCenter =
+          rect.left + rect.width / 2
+
+        const distance =
+          Math.abs(cardCenter - carouselCenter)
+
+        if (distance < closestDistance) {
+          closestDistance = distance
+          closestIndex = index
+        }
+      })
+
+      setActiveIndex(closestIndex)
+    }
+
+    carousel.addEventListener('scroll', handleScroll, {
+      passive: true,
+    })
+
+    handleScroll()
+
+    return () => {
+      carousel.removeEventListener(
+        'scroll',
+        handleScroll
+      )
+    }
+  }, [])
+
+  const scrollToReview = (index) => {
+    const carousel = carouselRef.current
+
+    if (!carousel) return
+
+    const cards =
+      carousel.querySelectorAll(
+        '[data-review-card]'
+      )
+
+    const card = cards[index]
+
+    if (!card) return
+
+    card.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    })
+  }
+
+  return (
+    <section
+      id="reviews"
+      className="
+        scroll-mt-16
+        overflow-hidden
+        bg-cream
+        py-16
+        md:py-24
+      "
+    >
+      <div className="mx-auto max-w-7xl">
+
+        {/* =============================== */}
+        {/* HEADING                         */}
+        {/* =============================== */}
+
+        <Motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+            margin: '-70px',
+          }}
+          transition={{
+            duration: 0.6,
+          }}
+          className="
+            mx-auto
+            max-w-3xl
+            px-5
+            text-center
+            sm:px-7
+          "
+        >
+          <div className="mx-auto flex justify-center [&_svg]:size-6">
+            <ReviewStars count={5} />
           </div>
+
+          <h2
+            className="
+              mt-5
+              font-serif
+              text-[3rem]
+              font-medium
+              leading-[0.95]
+              tracking-[-0.04em]
+              text-cocoa
+              sm:text-[4rem]
+            "
+          >
+            Loved by customers.
+          </h2>
+
+          <p
+            className="
+              mx-auto
+              mt-5
+              max-w-xl
+              text-[0.95rem]
+              leading-7
+              text-cocoa/60
+            "
+          >
+            Real feedback from customers making
+            Deep Skin part of their scar care routine.
+          </p>
         </Motion.div>
 
-        <div className="mt-6 grid gap-5 md:grid-cols-2">
+
+        {/* =============================== */}
+        {/* MOBILE REVIEW CAROUSEL          */}
+        {/* =============================== */}
+
+        <div className="mt-10 md:hidden">
+
+          <div
+            ref={carouselRef}
+            className="
+              flex
+              snap-x
+              snap-mandatory
+              items-start
+              gap-4
+              overflow-x-auto
+              pl-5
+              pr-[25vw]
+              pb-3
+              [scrollbar-width:none]
+              [&::-webkit-scrollbar]:hidden
+            "
+          >
+            {reviews.map((review, index) => (
+
+              <Motion.article
+                key={`${review.name}-${review.date}`}
+                data-review-card
+                initial={{
+                  opacity: 0,
+                  y: 14,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                  margin: '-30px',
+                }}
+                transition={{
+                  duration: 0.4,
+                  delay: index * 0.03,
+                }}
+                className="
+                  flex
+                  w-[70vw]
+                  max-w-[18.5rem]
+                  shrink-0
+                  snap-center
+                  flex-col
+                  rounded-[1.5rem]
+                  border
+                  border-cocoa/8
+                  bg-cream-light
+                  p-5
+                  shadow-[0_12px_35px_rgba(74,45,34,0.05)]
+                "
+              >
+
+                {/* STARS */}
+                <ReviewStars count={review.stars} />
+
+
+                {/* TITLE */}
+                <h3
+                  className="
+                    mt-4
+                    font-serif
+                    text-[1.5rem]
+                    font-semibold
+                    leading-[1.1]
+                    tracking-[-0.02em]
+                    text-cocoa
+                  "
+                >
+                  {review.title}
+                </h3>
+
+
+                {/* REVIEW */}
+                <blockquote
+                  className="
+                    mt-3
+                    text-[0.82rem]
+                    leading-[1.55]
+                    text-cocoa/62
+                  "
+                >
+                  “{review.quote}”
+                </blockquote>
+
+
+                {/* VERIFIED PURCHASE */}
+                <div
+                  className="
+                    mt-6
+                    border-t
+                    border-cocoa/8
+                    pt-4
+                  "
+                >
+                  <p
+                    className="
+                      text-[0.7rem]
+                      font-semibold
+                      uppercase
+                      tracking-[0.14em]
+                      text-rose-dark
+                    "
+                  >
+                    {review.badge}
+                  </p>
+
+                  <p
+                    className="
+                      mt-2
+                      text-[0.64rem]
+                      leading-5
+                      text-cocoa/43
+                    "
+                  >
+                    Reviewed in the United Kingdom on{' '}
+                    {review.date}
+                  </p>
+                </div>
+
+              </Motion.article>
+
+            ))}
+          </div>
+
+
+          {/* =============================== */}
+          {/* DOT INDICATORS                  */}
+          {/* =============================== */}
+
+          <div
+            className="
+              mt-5
+              flex
+              items-center
+              justify-center
+              gap-2
+            "
+          >
+            {reviews.map((review, index) => (
+
+              <button
+                key={`${review.name}-indicator`}
+                type="button"
+                onClick={() =>
+                  scrollToReview(index)
+                }
+                aria-label={`Go to review ${
+                  index + 1
+                }`}
+                className={`
+                  rounded-full
+                  transition-all
+                  duration-200
+                  ${
+                    activeIndex === index
+                      ? 'h-2 w-6 bg-cocoa'
+                      : 'size-2 bg-cocoa/20'
+                  }
+                `}
+              />
+
+            ))}
+          </div>
+
+
+          <p
+            className="
+              mt-3
+              text-center
+              text-[0.62rem]
+              font-semibold
+              uppercase
+              tracking-[0.2em]
+              text-cocoa/42
+            "
+          >
+            Swipe to read more
+          </p>
+
+        </div>
+
+
+        {/* =============================== */}
+        {/* DESKTOP REVIEWS                 */}
+        {/* =============================== */}
+
+        <div
+          className="
+            mt-14
+            hidden
+            gap-5
+            px-7
+            md:grid
+            md:grid-cols-2
+            lg:grid-cols-4
+            lg:px-10
+          "
+        >
           {reviews.map((review, index) => (
+
             <Motion.article
-              key={`${review.name}-${review.date}`}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="flex flex-col rounded-[1.5rem] border border-cocoa/8 bg-cream-light p-6 sm:p-8"
+              key={`${review.name}-${review.date}-desktop`}
+              initial={{
+                opacity: 0,
+                y: 18,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                margin: '-50px',
+              }}
+              transition={{
+                duration: 0.5,
+                delay: (index % 4) * 0.05,
+              }}
+              className="
+                flex
+                flex-col
+                rounded-[1.6rem]
+                border
+                border-cocoa/8
+                bg-cream-light
+                p-6
+                shadow-[0_16px_45px_rgba(74,45,34,0.05)]
+              "
             >
+
               <ReviewStars count={review.stars} />
-              <h3 className="mt-4 font-serif text-[1.55rem] font-semibold leading-tight text-cocoa">{review.title}</h3>
-              <blockquote className="mt-3 flex-1 text-sm leading-6 text-cocoa/62">
+
+
+              <h3
+                className="
+                  mt-5
+                  font-serif
+                  text-[1.5rem]
+                  font-semibold
+                  leading-tight
+                  text-cocoa
+                "
+              >
+                {review.title}
+              </h3>
+
+
+              <blockquote
+                className="
+                  mt-4
+                  flex-1
+                  text-[0.86rem]
+                  leading-6
+                  text-cocoa/62
+                "
+              >
                 “{review.quote}”
               </blockquote>
-              <div className="mt-6 border-t border-cocoa/8 pt-4">
-                <p className="text-sm font-semibold text-cocoa">{review.name}</p>
-                <p className="mt-1 text-[0.7rem] leading-5 text-cocoa/43">
-                  Reviewed in the United Kingdom on {review.date}
+
+
+              <div
+                className="
+                  mt-6
+                  border-t
+                  border-cocoa/8
+                  pt-4
+                "
+              >
+                <p
+                  className="
+                    text-[0.72rem]
+                    font-semibold
+                    uppercase
+                    tracking-[0.14em]
+                    text-rose-dark
+                  "
+                >
+                  {review.badge}
                 </p>
-                <p className="mt-1 text-[0.7rem] font-semibold text-rose-dark">{review.badge}</p>
+
+                <p
+                  className="
+                    mt-2
+                    text-[0.68rem]
+                    leading-5
+                    text-cocoa/43
+                  "
+                >
+                  Reviewed in the United Kingdom on{' '}
+                  {review.date}
+                </p>
               </div>
+
             </Motion.article>
+
           ))}
         </div>
+
+
+        {/* =============================== */}
+        {/* AMAZON CTA                      */}
+        {/* =============================== */}
+
+        <div className="mt-10 text-center">
+
+          <a
+            href={AMAZON_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex
+              min-h-12
+              items-center
+              justify-center
+              gap-2
+              rounded-full
+              border
+              border-cocoa/12
+              px-6
+              py-3
+              text-sm
+              font-semibold
+              text-cocoa
+              transition-colors
+              hover:bg-cocoa
+              hover:text-white
+            "
+          >
+            See more on Amazon
+
+            <ArrowUpRight
+              size={16}
+              strokeWidth={1.7}
+            />
+          </a>
+
+        </div>
+
       </div>
     </section>
   )

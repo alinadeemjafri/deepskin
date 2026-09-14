@@ -1,74 +1,232 @@
+import { CalendarDays, Clock3, ShieldCheck } from 'lucide-react'
 import { motion as Motion } from 'framer-motion'
-import { CalendarRange, Clock3, ShieldCheck } from 'lucide-react'
 
-const routine = [
+const routineItems = [
   {
     icon: ShieldCheck,
-    label: 'Begin carefully',
+    eyebrow: 'Begin carefully',
     title: 'Start gradually',
     text: 'Begin with shorter wear and increase the time as your skin becomes comfortable with the tape.',
   },
   {
     icon: Clock3,
-    label: 'Daily target',
-    title: 'At least 12 hours',
-    text: 'Once comfortable, aim for 12 or more hours of wear each day for a consistent routine.',
+    eyebrow: 'Daily target',
+    title: '18–24 hours',
+    text: 'Once comfortable, aim for 18–24 hours of wear each day for a consistent routine.',
   },
   {
-    icon: CalendarRange,
-    label: 'Recommended course',
+    icon: CalendarDays,
+    eyebrow: 'Recommended course',
     title: '8–12 weeks',
-    text: 'Use daily for at least 8–12 weeks. Older or more established scars may need longer.',
+    text: 'Use consistently for at least 8–12 weeks. Older or more established scars may need longer.',
   },
 ]
 
 export default function RecommendedTime() {
   return (
-    <section id="recommended-time" className="scroll-mt-16 bg-cocoa px-5 py-20 text-white sm:px-7 md:py-28 lg:px-10">
-      <div className="mx-auto max-w-7xl">
+    <section
+      id="recommended-time"
+      className="scroll-mt-16 bg-cocoa text-white"
+    >
+      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-7 md:py-24 lg:px-10">
+
+        {/* INTRO */}
         <Motion.div
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
+          viewport={{ once: true, margin: '-70px' }}
           transition={{ duration: 0.6 }}
-          className="grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-end"
+          className="max-w-3xl"
         >
-          <div>
-            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-blush-deep">Recommended time</p>
-            <h2 className="mt-4 font-serif text-[2.55rem] font-medium leading-[0.98] tracking-[-0.025em] sm:text-[3.35rem] md:text-[4rem]">
-              Consistency is the routine.
-            </h2>
-          </div>
-          <p className="max-w-2xl text-base leading-7 text-white/62 lg:justify-self-end">
-            Scar care is gradual. Give the tape enough daily contact time, keep the skin and tape clean,
-            and stay with the routine for a meaningful period.
+          <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[#e7b9a9] sm:text-[0.75rem]">
+            Recommended time
+          </p>
+
+          <h2 className="mt-5 max-w-[20rem] font-serif text-[3rem] font-medium leading-[0.95] tracking-[-0.04em] text-white sm:max-w-none sm:text-[4rem]">
+            Consistency is the routine.
+          </h2>
+
+          <p className="mt-6 max-w-2xl text-[0.98rem] leading-7 text-white/65 sm:text-[1.05rem]">
+            Scar care is gradual. Give the tape enough daily contact time,
+            keep the skin and tape clean, and stay consistent over time.
           </p>
         </Motion.div>
 
-        <div className="mt-12 grid overflow-hidden rounded-[1.75rem] border border-white/10 bg-white/[0.045] md:grid-cols-3 lg:mt-16">
-          {routine.map((item, index) => (
-            <Motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: index * 0.07 }}
-              className="border-b border-white/10 p-7 last:border-b-0 md:border-b-0 md:border-r md:last:border-r-0 lg:p-9"
-            >
-              <div className="flex size-11 items-center justify-center rounded-full bg-white/10 text-blush-deep">
-                <item.icon size={20} strokeWidth={1.6} />
-              </div>
-              <p className="mt-7 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white/42">{item.label}</p>
-              <h3 className="mt-2 font-serif text-[2rem] font-medium text-white">{item.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-white/57">{item.text}</p>
-            </Motion.div>
-          ))}
+
+        {/* MOBILE COMPACT ROUTINE */}
+        <div className="mt-10 space-y-3 md:hidden">
+          {routineItems.map((item, index) => {
+            const Icon = item.icon
+
+            return (
+              <Motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{
+                  duration: 0.45,
+                  delay: index * 0.05,
+                }}
+                className="
+                  flex
+                  items-start
+                  gap-4
+                  rounded-[1.4rem]
+                  border
+                  border-white/10
+                  bg-white/[0.045]
+                  px-4
+                  py-4
+                "
+              >
+                {/* ICON */}
+                <div className="
+                  flex
+                  size-11
+                  shrink-0
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-white/10
+                  text-[#e7b9a9]
+                ">
+                  <Icon
+                    aria-hidden="true"
+                    className="size-5"
+                    strokeWidth={1.7}
+                  />
+                </div>
+
+                {/* TEXT */}
+                <div className="min-w-0">
+                  <p className="
+                    text-[0.62rem]
+                    font-semibold
+                    uppercase
+                    tracking-[0.22em]
+                    text-white/45
+                  ">
+                    {item.eyebrow}
+                  </p>
+
+                  <h3 className="
+                    mt-1.5
+                    font-serif
+                    text-[1.65rem]
+                    font-medium
+                    leading-tight
+                    tracking-[-0.025em]
+                    text-white
+                  ">
+                    {item.title}
+                  </h3>
+
+                  <p className="
+                    mt-2
+                    text-[0.82rem]
+                    leading-[1.5]
+                    text-white/58
+                  ">
+                    {item.text}
+                  </p>
+                </div>
+              </Motion.div>
+            )
+          })}
         </div>
 
-        <p className="mx-auto mt-8 max-w-4xl text-center text-xs leading-6 text-white/43">
-          Use only on clean, dry and fully healed skin. Remove regularly for cleansing, allow the tape to air dry,
-          and stop using it if irritation occurs. Individual results and treatment time vary.
-        </p>
+
+        {/* DESKTOP */}
+        <div className="mt-14 hidden grid-cols-3 gap-5 md:grid">
+          {routineItems.map((item, index) => {
+            const Icon = item.icon
+
+            return (
+              <Motion.article
+                key={item.title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.06,
+                }}
+                className="
+                  rounded-[1.7rem]
+                  border
+                  border-white/10
+                  bg-white/[0.045]
+                  p-6
+                "
+              >
+                <div className="
+                  flex
+                  size-12
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-white/10
+                  text-[#e7b9a9]
+                ">
+                  <Icon
+                    aria-hidden="true"
+                    className="size-5"
+                    strokeWidth={1.7}
+                  />
+                </div>
+
+                <p className="
+                  mt-8
+                  text-[0.68rem]
+                  font-semibold
+                  uppercase
+                  tracking-[0.23em]
+                  text-white/45
+                ">
+                  {item.eyebrow}
+                </p>
+
+                <h3 className="
+                  mt-3
+                  font-serif
+                  text-[2rem]
+                  font-medium
+                  tracking-[-0.025em]
+                  text-white
+                ">
+                  {item.title}
+                </h3>
+
+                <p className="
+                  mt-4
+                  text-[0.92rem]
+                  leading-6
+                  text-white/58
+                ">
+                  {item.text}
+                </p>
+              </Motion.article>
+            )
+          })}
+        </div>
+
+
+        {/* SAFETY NOTE */}
+        <div className="mt-8 border-t border-white/10 pt-6">
+          <p className="
+            max-w-4xl
+            text-[0.72rem]
+            leading-5
+            text-white/38
+            sm:text-[0.8rem]
+          ">
+            Use only on clean, dry and fully healed skin. Remove regularly
+            for cleaning, allow the tape to air dry, and discontinue use if
+            irritation occurs. Individual treatment time may vary.
+          </p>
+        </div>
+
       </div>
     </section>
   )
