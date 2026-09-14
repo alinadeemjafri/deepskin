@@ -11,8 +11,8 @@ const routineItems = [
   {
     icon: Clock3,
     eyebrow: 'Daily target',
-    title: '18–24 hours',
-    text: 'Once comfortable, aim for 18–24 hours of wear each day for a consistent routine.',
+    title: 'At least 12 hours',
+    text: 'Once comfortable, aim for at least 12 hours of wear each day for a consistent routine.',
   },
   {
     icon: CalendarDays,

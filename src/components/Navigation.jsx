@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion as Motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { AMAZON_URL } from '../config'
+import AmazonLink from './AmazonLink'
 
 const links = [
   { label: 'The science', href: '#science' },
   { label: 'How to use', href: '#how-to-use' },
   { label: 'Routine', href: '#recommended-time' },
   { label: 'Reviews', href: '#reviews' },
+  { label: 'Scar Care Daily', href: '#scar-care-daily' },
 ]
 
 export default function Navigation() {
@@ -76,14 +77,12 @@ export default function Navigation() {
             </a>
           ))}
 
-          <a
-            href={AMAZON_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          <AmazonLink
+            placement="desktop_navigation"
             className="rounded-full bg-cocoa px-6 py-3 text-[0.8rem] font-semibold tracking-[0.02em] text-white transition-colors duration-200 hover:bg-cocoa-light"
           >
             Shop on Amazon
-          </a>
+          </AmazonLink>
         </div>
 
         <button
@@ -135,14 +134,13 @@ export default function Navigation() {
                 </a>
               ))}
 
-              <a
-                href={AMAZON_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <AmazonLink
+                placement="mobile_navigation"
+                onClick={() => setMobileOpen(false)}
                 className="mt-5 rounded-full bg-cocoa px-7 py-4 text-center text-sm font-semibold text-white"
               >
                 Shop on Amazon
-              </a>
+              </AmazonLink>
             </div>
           </Motion.div>
         )}

@@ -1,17 +1,16 @@
 
 import { motion as Motion } from 'framer-motion'
-import { Leaf, Rabbit, Shield } from 'lucide-react'
-import { AMAZON_URL } from '../config'
+import { Leaf, Scissors, Shield } from 'lucide-react'
 
 const heroFeatures = [
   { icon: Shield, lines: ['Medical-grade', 'silicone'] },
-  { icon: Rabbit, lines: ['Cruelty free'] },
+  { icon: Scissors, lines: ['Cut to size'] },
   { icon: Leaf, lines: ['Discreet', 'everyday care'] },
 ]
 
-function FeatureRow() {
+function FeatureRow({ mobile = false }) {
   return (
-    <div className="mt-10 flex w-[31rem] items-stretch">
+    <div className={`flex items-stretch ${mobile ? 'mx-auto mt-5 w-[calc(100%-2rem)] max-w-[23rem]' : 'mt-10 w-[31rem]'}`}>
       {heroFeatures.map((feature, index) => (
         <div
           key={feature.lines.join('-')}
@@ -24,10 +23,10 @@ function FeatureRow() {
           <feature.icon
             aria-hidden="true"
             strokeWidth={1.65}
-            className="size-9 text-cocoa"
+            className={`${mobile ? 'size-8' : 'size-9'} text-cocoa`}
           />
 
-          <p className="mt-2.5 text-[0.72rem] font-semibold uppercase leading-[1.25] tracking-[-0.01em] text-cocoa">
+          <p className={`${mobile ? 'mt-2 text-[0.68rem]' : 'mt-2.5 text-[0.72rem]'} font-semibold uppercase leading-[1.25] tracking-[-0.01em] text-cocoa`}>
             {feature.lines.map((line) => (
               <span key={line} className="block">
                 {line}
@@ -40,16 +39,16 @@ function FeatureRow() {
   )
 }
 
-function Eyebrow() {
+function Eyebrow({ centred = false }) {
   return (
-    <div className="flex items-center gap-4">
-      <p className="text-[0.76rem] font-semibold uppercase tracking-[0.28em] text-cocoa lg:text-[0.82rem]">
+    <div className={`flex items-center gap-4 ${centred ? 'justify-center' : ''}`}>
+      <p className="text-[0.69rem] font-semibold uppercase tracking-[0.28em] text-cocoa sm:text-[0.76rem] lg:text-[0.82rem]">
         Advanced scar care
       </p>
 
       <span
         aria-hidden="true"
-        className="h-px w-20 bg-cocoa/65"
+        className="h-px w-14 bg-cocoa/65 sm:w-20"
       />
     </div>
   )
@@ -57,47 +56,40 @@ function Eyebrow() {
 
 export default function Hero() {
   return (
-    <>
-      {/* MOBILE HERO */}
-      <section
-        id="top"
-        className="relative md:hidden"
-      >
-        {/* CROPPED MOBILE IMAGE */}
-        <div className="overflow-hidden">
-          <Motion.img
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.45 }}
-            src="/hero-mobile-v2.jpg"
-            alt="Deep Skin advanced silicone scar tape"
-            fetchPriority="high"
-            className="block h-auto w-full -mb-[35px]"
-          />
-        </div>
-
-        {/* MOBILE CTA DIRECTLY BELOW HERO */}
-        <div className="-mt-1 bg-[#f7efeb] px-5 pb-6 pt-3">
-          <a
-            href={AMAZON_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex min-h-[56px] w-full items-center justify-center rounded-full bg-cocoa px-6 py-4 text-[1rem] font-semibold tracking-[0.01em] text-white transition-colors active:bg-cocoa-light"
-          >
-            Shop on Amazon
-          </a>
-        </div>
-      </section>
-
-      {/* DESKTOP HERO */}
-      <section className="relative isolate hidden h-[max(720px,100svh)] overflow-hidden bg-[#f3e2d9] md:block">
+    <section id="top" className="relative isolate h-[820px] overflow-hidden bg-[#f3e2d9] md:h-[max(720px,100svh)]">
+      <picture className="absolute inset-0 -z-20">
+        <source media="(max-width: 767px)" srcSet="/hero-mobile.jpg" />
         <img
           src="/hero-desktop.jpg"
           alt="Deep Skin medical-grade silicone scar tape roll beside its product box"
           fetchPriority="high"
-          className="absolute inset-0 -z-20 h-full w-full object-cover object-center"
+          className="h-full w-full object-cover object-center"
         />
+      </picture>
 
+      <Motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.55 }}
+        className="absolute inset-x-0 top-[4.2rem] w-full max-w-full overflow-hidden px-4 text-center md:hidden"
+      >
+        <Eyebrow centred />
+
+        <h1 className="mt-4 font-serif text-[3.6rem] font-medium leading-[0.84] tracking-[-0.045em] text-cocoa min-[400px]:text-[4rem]">
+          A more
+          <span className="block">confident you.</span>
+        </h1>
+
+        <p className="mx-auto mt-4 max-w-[22rem] text-[0.93rem] font-medium leading-[1.45] tracking-[-0.012em] text-cocoa/88">
+          Medical-grade silicone scar tape for<br className="hidden min-[365px]:block" />
+          comfortable wear, discreet care and<br className="hidden min-[365px]:block" />
+          a consistent routine.
+        </p>
+
+        <FeatureRow mobile />
+      </Motion.div>
+
+      <div className="absolute inset-0 hidden md:block">
         <Motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -112,16 +104,16 @@ export default function Hero() {
           </h1>
 
           <p className="mt-5 max-w-[32rem] text-[clamp(1rem,1.5vw,1.45rem)] font-medium leading-[1.42] tracking-[-0.015em] text-cocoa/88">
-            Medical-grade silicone scar tape designed
+            Medical-grade silicone scar tape for
             <br className="hidden lg:block" />
-            for real care, visible progress and
+            comfortable wear, discreet care and
             <br className="hidden lg:block" />
-            a smoother tomorrow.
+            a consistent routine.
           </p>
 
           <FeatureRow />
         </Motion.div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }

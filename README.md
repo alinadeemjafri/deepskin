@@ -1,16 +1,39 @@
-# React + Vite
+# Deep Skin
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing website for Deep Skin medical-grade silicone scar tape, built with React, Vite and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Run the release checks with:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run lint
+npm run build
+```
 
-## Expanding the ESLint configuration
+The production build also renders the Scar Care Daily index and article pages as static HTML, and generates the blog sitemap entries and RSS feed.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Scar Care Daily
+
+Published articles live in `src/content/articles.json`. The scheduled GitHub Actions workflow runs every morning, retrieves relevant PubMed abstracts, asks the configured OpenAI model to write only from that evidence, runs a second strict fact-check, validates citations and prohibited claims, then commits an article only when every guard passes.
+
+To activate daily publication, add an Actions repository secret named `OPENAI_API_KEY`:
+
+```bash
+gh secret set OPENAI_API_KEY --repo alinadeemjafri/deepskin
+```
+
+The workflow can also be run manually from the repository’s Actions tab. It is intentionally fail-closed: missing research, an unsupported citation, a rejected fact-check or an API failure produces no article.
+
+## Images
+
+Only images used by the live site belong in `public/`. Original, unused artwork is retained in `source-images/archive/` so Vercel does not ship it to visitors.
+
+## Deployment
+
+The repository is linked to the existing Vercel project `deep-skin-site`. Vercel Web Analytics is loaded in the React site and the static blog pages, with Amazon CTA clicks tracked by placement.
