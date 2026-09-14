@@ -1,7 +1,6 @@
 
 import { motion as Motion } from 'framer-motion'
 import { Leaf, Rabbit, Shield } from 'lucide-react'
-import { AMAZON_URL } from '../config'
 
 const heroFeatures = [
   { icon: Shield, lines: ['Medical-grade', 'silicone'] },
@@ -76,17 +75,6 @@ export default function Hero() {
           />
         </div>
 
-        {/* MOBILE CTA DIRECTLY BELOW HERO */}
-        <div className="-mt-1 bg-[#f7efeb] px-5 pb-6 pt-3">
-          <a
-            href={AMAZON_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex min-h-[56px] w-full items-center justify-center rounded-full bg-cocoa px-6 py-4 text-[1rem] font-semibold tracking-[0.01em] text-white transition-colors active:bg-cocoa-light"
-          >
-            Shop on Amazon
-          </a>
-        </div>
       </section>
 
       {/* DESKTOP HERO */}

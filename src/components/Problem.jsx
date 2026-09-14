@@ -4,26 +4,31 @@ const stories = [
   {
     title: 'C-section',
     image: '/problem-csection.png',
+    mobileImage: '/problem-csection-mobile.jpg',
     alt: 'Healed C-section scar',
   },
   {
     title: 'Surgery',
     image: '/problem-surgery.png',
+    mobileImage: '/problem-surgery-mobile.jpg',
     alt: 'Healed shoulder surgery scar',
   },
   {
     title: 'Injury',
     image: '/problem-injury.png',
+    mobileImage: '/problem-injury-mobile.jpg',
     alt: 'Healed scar following an injury',
   },
   {
     title: 'Burn',
     image: '/problem-burn.png',
+    mobileImage: '/problem-burn-mobile.jpg',
     alt: 'Healed burn scar',
   },
   {
     title: 'Keloid',
     image: '/problem-keloid.png',
+    mobileImage: '/problem-keloid-mobile.jpg',
     alt: 'Raised keloid scar',
   },
 ]
@@ -245,7 +250,7 @@ export default function Problem() {
               >
                 <div className="aspect-[0.88] overflow-hidden rounded-[1rem]">
                   <img
-                    src={story.image}
+                    src={story.mobileImage}
                     alt={story.alt}
                     loading="lazy"
                     decoding="async"

@@ -135,14 +135,6 @@ export default function Navigation() {
                 </a>
               ))}
 
-              <a
-                href={AMAZON_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 rounded-full bg-cocoa px-7 py-4 text-center text-sm font-semibold text-white"
-              >
-                Shop on Amazon
-              </a>
             </div>
           </Motion.div>
         )}

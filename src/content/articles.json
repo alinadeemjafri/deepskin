@@ -1,0 +1,130 @@
+[
+  {
+    "slug": "what-research-says-about-silicone-scar-sheets",
+    "title": "What does the research say about silicone scar sheets?",
+    "description": "A careful look at why silicone sheets appear in scar-care guidance—and where the clinical evidence is still uncertain.",
+    "dek": "Silicone sheets are widely recommended as a non-invasive scar-care option, but ‘widely recommended’ is not the same as guaranteed results.",
+    "category": "Research explained",
+    "publishedAt": "2026-09-14",
+    "readingMinutes": 4,
+    "takeaways": [
+      "Clinical guidance commonly includes silicone sheets and gels as a first-line, non-invasive option.",
+      "A 2021 Cochrane review found the available trials small and the certainty of evidence low or very low for several outcomes.",
+      "Silicone tape belongs on closed, fully healed skin—not an open or weeping wound."
+    ],
+    "sections": [
+      {
+        "heading": "Why silicone appears in scar-care guidance",
+        "paragraphs": [
+          "An international expert review of scar-management guidance describes silicone sheets and gels as a first-line, non-invasive option for both preventing and treating hypertrophic scars and keloids. That recommendation reflects clinical experience, practicality and the body of evidence available at the time.",
+          "It does not mean every silicone product has been proven to change every scar. Product quality, the type and age of a scar, wear time and individual skin can all affect a person’s experience."
+        ],
+        "sourceIds": ["guidelines-2014"]
+      },
+      {
+        "heading": "What the strongest review found",
+        "paragraphs": [
+          "A 2021 Cochrane review examined 13 studies of silicone gel sheeting for hypertrophic scars. The authors found that many studies were small, reported results poorly or carried a high risk of bias.",
+          "Their conclusion was deliberately cautious: silicone sheets may help some outcomes, but the evidence was too uncertain to support sweeping promises. That is why responsible scar-care copy should talk about managing scar appearance, not removing scars or guaranteeing a result."
+        ],
+        "sourceIds": ["cochrane-2021"]
+      },
+      {
+        "heading": "Using sheets as part of a routine",
+        "paragraphs": [
+          "Follow the product instructions and use silicone tape only after a wound has closed and healed. Apply it to clean, dry skin, build wear time gradually and stop if irritation develops.",
+          "If a scar is painful, changing quickly, restricting movement or causing concern, ask a qualified healthcare professional for individual advice."
+        ],
+        "sourceIds": ["st-georges-silicone"]
+      }
+    ],
+    "sources": [
+      {
+        "id": "cochrane-2021",
+        "title": "Silicone gel sheeting for treating hypertrophic scars",
+        "publisher": "Cochrane Database of Systematic Reviews via PubMed",
+        "year": 2021,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34564840/"
+      },
+      {
+        "id": "guidelines-2014",
+        "title": "Management of scars: updated practical guidelines and use of silicones",
+        "publisher": "European Journal of Dermatology via PubMed",
+        "year": 2014,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25141160/"
+      },
+      {
+        "id": "st-georges-silicone",
+        "title": "Silicone for scars: patient information",
+        "publisher": "St George’s University Hospitals NHS Foundation Trust",
+        "year": 2023,
+        "url": "https://www.stgeorges.nhs.uk/wp-content/uploads/2023/03/THE_SFS_LP.pdf"
+      }
+    ],
+    "disclaimer": "This article is general education, not medical advice. It does not diagnose a scar or replace advice from a qualified healthcare professional."
+  },
+  {
+    "slug": "keloid-or-hypertrophic-scar-whats-the-difference",
+    "title": "Keloid or hypertrophic scar: what’s the difference?",
+    "description": "The key distinction between two raised scar types, explained without trying to diagnose your skin online.",
+    "dek": "Both can be raised and firm, but their growth pattern is an important clinical distinction.",
+    "category": "Scar basics",
+    "publishedAt": "2026-09-13",
+    "readingMinutes": 3,
+    "takeaways": [
+      "A hypertrophic scar stays within the boundary of the original injury.",
+      "A keloid grows beyond the original wound boundary into nearby skin.",
+      "Appearance alone is not always enough for self-diagnosis; seek professional advice if you are unsure."
+    ],
+    "sections": [
+      {
+        "heading": "The boundary is the clearest distinction",
+        "paragraphs": [
+          "Hypertrophic scars and keloids both involve excess scar tissue. The simplest textbook distinction is where that tissue grows: a hypertrophic scar remains within the original wound, while a keloid extends beyond its edges.",
+          "Their timing and natural course may also differ. Hypertrophic scars often appear relatively soon after an injury and can gradually settle. Keloids can continue growing and may return after treatment."
+        ],
+        "sourceIds": ["overview-2021", "review-2023"]
+      },
+      {
+        "heading": "Why the difference matters",
+        "paragraphs": [
+          "Treatment choices depend on the scar, its location, symptoms, history and the person’s skin. Reviews describe management as potentially involving several approaches rather than one universal treatment.",
+          "That is also why a consumer scar-care product should not promise to remove a keloid. Silicone can be one non-invasive part of scar management, but assessment and treatment planning belong with a qualified professional."
+        ],
+        "sourceIds": ["review-2023"]
+      },
+      {
+        "heading": "When to ask for help",
+        "paragraphs": [
+          "Consider speaking with a GP, dermatologist or scar specialist if a raised scar is growing beyond the original wound, is painful or itchy, restricts movement, or is affecting your wellbeing.",
+          "For routine silicone tape use, wait until the skin is completely closed and healed, and stop if irritation occurs."
+        ],
+        "sourceIds": ["st-georges-silicone"]
+      }
+    ],
+    "sources": [
+      {
+        "id": "overview-2021",
+        "title": "Hypertrophic scars and keloids: Overview of the evidence and practical guide for differentiating between these abnormal scars",
+        "publisher": "Experimental Dermatology via PubMed",
+        "year": 2021,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/32479693/"
+      },
+      {
+        "id": "review-2023",
+        "title": "Keloids and Hypertrophic Scars",
+        "publisher": "Facial Plastic Surgery Clinics of North America via PubMed",
+        "year": 2023,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37236718/"
+      },
+      {
+        "id": "st-georges-silicone",
+        "title": "Silicone for scars: patient information",
+        "publisher": "St George’s University Hospitals NHS Foundation Trust",
+        "year": 2023,
+        "url": "https://www.stgeorges.nhs.uk/wp-content/uploads/2023/03/THE_SFS_LP.pdf"
+      }
+    ],
+    "disclaimer": "This article is general education, not medical advice. It does not diagnose a scar or replace advice from a qualified healthcare professional."
+  }
+]

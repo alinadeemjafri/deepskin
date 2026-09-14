@@ -7,7 +7,7 @@
  * must be updated before that change ships.
  */
 
-const EFFECTIVE_DATE = '1 August 2026'
+const EFFECTIVE_DATE = '14 September 2026'
 
 // Fill these in and they render automatically. Left blank, the corresponding
 // line is omitted rather than showing a placeholder on the live page.
@@ -254,35 +254,37 @@ export default function PrivacyPolicy() {
           </p>
         </Section>
 
-        <Section id="no-tracking" number="4" title="Cookies and tracking">
+        <Section id="no-tracking" number="4" title="Cookies and analytics">
           <p>
             <strong className="font-medium text-near-black/85">
               We set no cookies whatsoever.
             </strong>{' '}
             Not essential ones, not analytics ones, not advertising ones. We also
-            use no local storage, no session storage, no browser fingerprinting,
-            and no tracking pixels.
+            use no local storage, session storage, advertising pixels or cross-site
+            tracking.
           </p>
           <p>
-            Because we place nothing on your device, PECR does not require us to
-            show a cookie consent banner, which is why you will not see one. A
-            banner on a site like this would be theatre rather than protection.
+            We use Vercel Web Analytics to understand aggregate page views,
+            referrers, countries, browsers, operating systems and device types.
+            Vercel states that this service stores anonymised, aggregated data,
+            uses no cookies and does not identify or track visitors across days or
+            across different websites.
           </p>
-          <p>To be explicit about what we do not do, we run no:</p>
+          <p>
+            This measurement helps us understand which pages are useful and how
+            the site performs. We do not send names, email addresses, scar details
+            or other health information to Vercel Analytics.
+          </p>
+          <p>To be explicit about what we still do not run:</p>
           <Bullets
             items={[
-              'Google Analytics or any other analytics platform',
+              'Google Analytics or advertising analytics platforms',
               'Meta Pixel, TikTok Pixel, or any advertising or conversion tag',
               'Session recording, heatmaps, or scroll tracking',
               'Cross-site tracking, retargeting, or audience building',
               'Automated decision-making or profiling of any kind',
             ]}
           />
-          <p>
-            Because we do not track you across sites, there is nothing for a Do
-            Not Track or Global Privacy Control signal to switch off. We honour
-            them by default, simply by not tracking.
-          </p>
         </Section>
 
         <Section id="health-data" number="5" title="Health information">
