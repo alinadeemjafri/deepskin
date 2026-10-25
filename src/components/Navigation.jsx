@@ -9,7 +9,6 @@ const links = [
   { label: 'Routine', href: '#recommended-time' },
   { label: 'Reviews', href: '#reviews' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Scar Care Daily', href: '#scar-care-daily' },
 ]
 
 export default function Navigation() {
