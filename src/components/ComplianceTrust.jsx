@@ -8,7 +8,7 @@ export default function ComplianceTrust() {
           {/* UKCA MARK */}
           <div className="shrink-0">
             <img
-              src="/ukca-mark.png"
+              src="/ukca-mark.webp"
               alt="UKCA mark"
               className="w-[90px] sm:w-[110px]"
             />

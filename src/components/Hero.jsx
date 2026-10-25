@@ -110,7 +110,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.45 }}
-          src="/hero-2026-clean.png"
+          src="/hero-2026-clean.webp"
           alt="Deep Skin medical-grade silicone scar tape roll beside its product box"
           fetchPriority="high"
           width="990"

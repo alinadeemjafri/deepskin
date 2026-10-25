@@ -5,25 +5,25 @@ const steps = [
   {
     title: 'Clean & dry',
     text: 'Clean the scar area and make sure the skin is completely dry.',
-    image: '/how-step-clean.jpg',
+    image: '/how-step-clean.webp',
     alt: 'Cleaning healed skin before applying silicone scar tape',
   },
   {
     title: 'Cut to size',
     text: 'Trim the tape so it comfortably covers the scar.',
-    image: '/how-step-cut.jpg',
+    image: '/how-step-cut.webp',
     alt: 'Cutting silicone scar tape to the required size with scissors',
   },
   {
     title: 'Apply & wear consistently',
     text: 'Place the tape over the scar, press gently and wear consistently as directed.',
-    image: '/how-step-wear.jpg',
+    image: '/how-step-wear.webp',
     alt: 'Silicone scar tape applied smoothly over healed skin',
   },
   {
     title: 'Wash & reuse',
     text: 'Gently wash the tape, allow it to air dry and reuse while adhesion remains effective.',
-    image: '/how-step-reuse.jpg',
+    image: '/how-step-reuse.webp',
     alt: 'Washing reusable silicone scar tape under running water',
   },
 ]

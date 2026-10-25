@@ -3,31 +3,31 @@ import { motion as Motion } from 'framer-motion'
 const stories = [
   {
     title: 'C-section',
-    image: '/problem-csection.png',
+    image: '/problem-csection.webp',
     mobileImage: '/problem-csection-mobile.jpg',
     alt: 'Healed C-section scar',
   },
   {
     title: 'Surgery',
-    image: '/problem-surgery.png',
+    image: '/problem-surgery.webp',
     mobileImage: '/problem-surgery-mobile.jpg',
     alt: 'Healed shoulder surgery scar',
   },
   {
     title: 'Injury',
-    image: '/problem-injury.png',
+    image: '/problem-injury.webp',
     mobileImage: '/problem-injury-mobile.jpg',
     alt: 'Healed scar following an injury',
   },
   {
     title: 'Burn',
-    image: '/problem-burn.png',
+    image: '/problem-burn.webp',
     mobileImage: '/problem-burn-mobile.jpg',
     alt: 'Healed burn scar',
   },
   {
     title: 'Keloid',
-    image: '/problem-keloid.png',
+    image: '/problem-keloid.webp',
     mobileImage: '/problem-keloid-mobile.jpg',
     alt: 'Raised keloid scar',
   },
@@ -55,7 +55,7 @@ export default function Problem() {
         {/* MAIN PROBLEM IMAGE */}
         <div className="relative h-[700px] overflow-hidden">
           <img
-            src="/problem-main.jpg"
+            src="/problem-main.webp"
             alt="Woman looking at a healed abdominal scar"
             loading="lazy"
             decoding="async"
@@ -301,7 +301,7 @@ export default function Problem() {
         {/* MAIN DESKTOP PROBLEM IMAGE */}
         <div className="relative min-h-[720px] overflow-hidden rounded-[2rem]">
           <img
-            src="/problem-main.jpg"
+            src="/problem-main.webp"
             alt="Woman looking at a healed abdominal scar"
             loading="lazy"
             decoding="async"

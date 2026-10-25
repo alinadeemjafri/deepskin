@@ -58,7 +58,7 @@ const mobileLayers = [
     icon: Droplet,
     title: 'German-grade silicone core',
     text: 'Helps lock in moisture for an optimal scar-healing environment.',
-    detailImage: '/silicone-core-detail.png',
+    detailImage: '/silicone-core-detail.webp',
   },
   {
     id: 'adhesive',
@@ -118,7 +118,7 @@ export default function Science() {
 
   useEffect(() => {
     const img = new Image()
-    img.src = '/silicone-core-detail.png'
+    img.src = '/silicone-core-detail.webp'
   }, [])
 
   const selectedLayer =
@@ -159,7 +159,7 @@ export default function Science() {
             "
           >
             <img
-              src="/science-backed-mobile.png"
+              src="/science-backed-mobile.webp"
               alt=""
               aria-hidden="true"
               loading="lazy"
@@ -223,7 +223,7 @@ export default function Science() {
         {/* INTERACTIVE IMAGE */}
         <div className="relative mt-5 h-[340px] overflow-hidden">
           <img
-            src="/science-layers-mobile.png"
+            src="/science-layers-mobile.webp"
             alt="Three-layer construction of Deep Skin silicone scar tape"
             loading="lazy"
             className="absolute inset-0 h-full w-full scale-[1.08] object-cover object-[center_82%]"
@@ -404,7 +404,7 @@ export default function Science() {
         className="relative mx-auto hidden aspect-square w-full max-w-[100rem] overflow-hidden bg-[#eddcd3] md:block"
       >
         <img
-          src="/science-clean.jpg"
+          src="/science-clean.webp"
           alt="Layered view of silicone scar tape positioned above healed scar tissue"
           loading="lazy"
           width="1254"
