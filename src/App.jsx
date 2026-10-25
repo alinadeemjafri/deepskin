@@ -6,6 +6,7 @@ import Science from './components/Science'
 import HowItWorks from './components/HowItWorks'
 import RecommendedTime from './components/RecommendedTime'
 import Reviews from './components/Reviews'
+import FAQ from './components/FAQ'
 import ScarCareDaily from './components/ScarCareDaily'
 import Footer from './components/Footer'
 import StickyMobileCTA from './components/StickyMobileCTA'
@@ -30,6 +31,8 @@ export default function App() {
         <RecommendedTime />
 
         <Reviews />
+
+        <FAQ />
 
         <ScarCareDaily />
       </main>

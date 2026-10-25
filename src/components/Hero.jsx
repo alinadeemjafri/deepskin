@@ -54,27 +54,71 @@ function Eyebrow() {
   )
 }
 
+function MobileHeroCopy() {
+  return (
+    <div className="absolute inset-0 z-10 text-[#160e0c]">
+      <div className="absolute left-[5.1%] top-[8.95%] flex items-center gap-[2.2cqw]">
+        <p className="whitespace-nowrap text-[2.35cqw] font-medium uppercase leading-none tracking-[0.27em]">
+          Advanced scar care
+        </p>
+
+        <span
+          aria-hidden="true"
+          className="h-px w-[12.6cqw] bg-[#160e0c]/80"
+        />
+      </div>
+
+      <h1 className="absolute inset-x-0 top-[14.7%] text-center font-serif text-[12.7cqw] font-medium leading-[0.8] tracking-[-0.052em]">
+        A <span className="font-semibold">more</span>
+        <span className="block font-semibold">confident you.</span>
+      </h1>
+
+      <p className="absolute inset-x-[13%] top-[29.55%] text-center text-[3.05cqw] font-medium leading-[1.48] tracking-[-0.018em]">
+        Medical-grade silicone scar tape designed
+        <br />
+        for real care, visible progress and
+        <br />
+        a smoother tomorrow.
+      </p>
+
+      <div className="absolute inset-x-[5.5%] top-[45.25%] grid grid-cols-3 text-center text-[2.35cqw] font-medium uppercase leading-[1.18] tracking-[-0.025em]">
+        <p>
+          Medical-grade
+          <span className="block">silicone</span>
+        </p>
+
+        <p>Cruelty free</p>
+
+        <p>
+          Discreet
+          <span className="block">everyday care</span>
+        </p>
+      </div>
+    </div>
+  )
+}
+
 export default function Hero() {
   return (
     <>
       {/* MOBILE HERO */}
       <section
         id="top"
-        className="relative md:hidden"
+        className="relative overflow-hidden bg-[#d8c7bb] [container-type:inline-size] md:hidden"
       >
-        {/* CROPPED MOBILE IMAGE */}
-        <div className="overflow-hidden">
-          <Motion.img
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.45 }}
-            src="/hero-mobile-v2.jpg"
-            alt="Deep Skin advanced silicone scar tape"
-            fetchPriority="high"
-            className="block h-auto w-full -mb-[35px]"
-          />
-        </div>
+        <Motion.img
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.45 }}
+          src="/hero-2026-clean.png"
+          alt="Deep Skin medical-grade silicone scar tape roll beside its product box"
+          fetchPriority="high"
+          width="990"
+          height="1589"
+          className="block h-auto w-full"
+        />
 
+        <MobileHeroCopy />
       </section>
 
       {/* DESKTOP HERO */}
@@ -95,8 +139,8 @@ export default function Hero() {
           <Eyebrow />
 
           <h1 className="mt-6 font-serif text-[clamp(4rem,6.15vw,6.4rem)] font-medium leading-[0.94] tracking-[-0.045em] text-cocoa">
-            A more
-            <span className="block">confident you.</span>
+            A <span className="font-semibold">more</span>
+            <span className="block font-semibold">confident you.</span>
           </h1>
 
           <p className="mt-5 max-w-[32rem] text-[clamp(1rem,1.5vw,1.45rem)] font-medium leading-[1.42] tracking-[-0.015em] text-cocoa/88">

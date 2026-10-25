@@ -2,12 +2,12 @@
  * Privacy Policy (UK GDPR / Data Protection Act 2018 / PECR).
  *
  * The commitments below describe the site as it is actually built: no cookies,
- * no analytics, no tracking pixels, no forms. If tracking, a newsletter, a
+ * cookieless Vercel Web Analytics only, no tracking pixels, no forms. If tracking, a newsletter, a
  * contact form, or a direct checkout is ever added, the relevant sections here
  * must be updated before that change ships.
  */
 
-const EFFECTIVE_DATE = '14 September 2026'
+const EFFECTIVE_DATE = '25 October 2026'
 
 // Fill these in and they render automatically. Left blank, the corresponding
 // line is omitted rather than showing a placeholder on the live page.
@@ -107,10 +107,10 @@ export default function PrivacyPolicy() {
                 </>,
                 <>
                   <strong className="font-medium text-near-black/85">
-                    We run no analytics and no advertising pixels.
+                    We use only cookieless, aggregate analytics and no advertising pixels.
                   </strong>{' '}
-                  We do not know who you are, and we do not build a profile of
-                  you.
+                  We count page views, not people. We do not know who you are,
+                  and we do not build a profile of you.
                 </>,
                 <>
                   <strong className="font-medium text-near-black/85">
@@ -330,6 +330,14 @@ export default function PrivacyPolicy() {
                 <strong className="font-medium text-near-black/85">
                   Legitimate interests (Article 6(1)(f))
                 </strong>{' '}
+                for cookieless, aggregate page-view analytics, to understand
+                which pages are useful and how the site performs. It identifies
+                no one and stores nothing on your device.
+              </>,
+              <>
+                <strong className="font-medium text-near-black/85">
+                  Legitimate interests (Article 6(1)(f))
+                </strong>{' '}
                 for replying to an email you send us, since you contacted us and
                 would reasonably expect a response.
               </>,
@@ -361,8 +369,9 @@ export default function PrivacyPolicy() {
                 <strong className="font-medium text-near-black/85">
                   Vercel Inc.
                 </strong>{' '}
-                hosts this website and processes server logs on our behalf, as
-                our data processor under a data processing agreement.
+                hosts this website, processes server logs and provides our
+                cookieless page-view analytics on our behalf, as our data
+                processor under a data processing agreement.
               </>,
               <>
                 <strong className="font-medium text-near-black/85">
@@ -555,8 +564,8 @@ export default function PrivacyPolicy() {
           <p>
             If we change how we handle personal data, we will update this page
             and revise the effective date at the top. Where a change materially
-            affects your rights, for example if we ever introduce analytics or a
-            contact form, we will make that prominent rather than burying it
+            affects your rights, for example if we ever introduce cookies,
+            advertising pixels or a contact form, we will make that prominent rather than burying it
             here.
           </p>
           <p>
